@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\AbuseReport;
+use Illuminate\Http\Request;
+
+class AbuseReportController extends Controller
+{
+    public function index()
+    {
+        $abuse_reports = AbuseReport::orderByDesc('created_at')->paginate(10);
+        return view('admin.abuse_reports.index', compact('abuse_reports'));
+    }
+
+    public function get($id)
+    {
+        $abuse_report = AbuseReport::find($id);
+        return view('admin.abuse_reports.single', compact('abuse_report'));
+    }
+}
