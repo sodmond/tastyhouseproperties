@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="fresh-vegetable-section section-lg-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row gx-xl-5 gy-xl-0 g-3 ratio_148_1">
             <div class="col-xl-6 col-12">
                 <div class="row g-sm-4 g-2">

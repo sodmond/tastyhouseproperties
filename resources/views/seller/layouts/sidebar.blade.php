@@ -33,7 +33,7 @@
 
         <li class="nav-item" role="presentation">
             <a class="nav-link {{ $activePage == 'seller.products' ? 'active' : '' }}" href="{{ route('seller.products') }}">
-                <i data-feather="shopping-bag"></i>Products</a>
+                <i data-feather="list"></i>Properties</a>
         </li>
 
         <li class="nav-item" role="presentation">

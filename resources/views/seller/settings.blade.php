@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="user-dashboard-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-3 col-lg-4">
                 @include('seller.layouts.sidebar', ['activePage' => 'seller.settings'])

@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="user-dashboard-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-3 col-lg-4">
                 @include('seller.layouts.sidebar', ['activePage' => 'seller.home'])
@@ -37,7 +37,7 @@
                                                 <img src="{{ asset('frontend/images/svg/order.svg') }}" class="blur-up lazyload svg-theme-color"
                                                     alt="">
                                                 <div class="total-detail">
-                                                    <h5>Total Products</h5>
+                                                    <h5>Total Properties</h5>
                                                     <h3>{{ number_format($products->count()) }}</h3>
                                                 </div>
                                             </div>
@@ -50,7 +50,7 @@
                                                 <img src="{{ asset('frontend/images/svg/pending.svg') }}" class="blur-up lazyload svg-theme-color"
                                                     alt="">
                                                 <div class="total-detail">
-                                                    <h5>Product Leads</h5>
+                                                    <h5>Property Leads</h5>
                                                     <h3>{{ number_format($chats->count()) }}</h3>
                                                 </div>
                                             </div>
@@ -83,10 +83,10 @@
                                 </div>
 
                                 <div class="row g-4">
-                                    <div class="col-xxl-6">
+                                    <div class="col-12">
                                         <div class="table-responsive dashboard-bg-box">
                                             <div class="dashboard-title mb-4">
-                                                <h3>Most Viewed Products</h3>
+                                                <h3>Most Viewed Properties</h3>
                                             </div>
 
                                             <table class="table product-table">

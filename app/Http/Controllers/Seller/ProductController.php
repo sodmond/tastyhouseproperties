@@ -43,7 +43,7 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->seller_id = auth('seller')->id();
-        $product->product_category_id = $request->category3 ?? $request->category2;
+        $product->product_category_id = $request->category2;
         $product->title = $request->title;
         $product->price = $request->price ?? 0;
         $product->price_type = $request->price_type;
@@ -65,7 +65,7 @@ class ProductController extends Controller
         if ($product->save()) {
             foreach($attributes as $attribute) {
                 $cats = json_decode($attribute->categories);
-                if ((in_array($request->category3, $cats) || in_array($request->category2, $cats)) && !empty($request->{strtolower($attribute->title)})) {
+                if (in_array($request->category2, $cats) && !empty($request->{strtolower($attribute->title)})) {
                     $value = (gettype($request->{strtolower($attribute->title)}) == 'array') ? $request->{strtolower($attribute->title)} : [$request->{strtolower($attribute->title)}] ;
                     ProductTag::create([
                         'product_id' => $product->id,
@@ -110,7 +110,7 @@ class ProductController extends Controller
         if ($product->seller_id != auth('seller')->id()) {
             return back();
         }
-        $product->product_category_id = $request->category3 ?? $request->category2;
+        $product->product_category_id = $request->category2;
         $product->title = $request->title;
         $product->price = $request->price ?? 0;
         $product->price_type = $request->price_type;
@@ -143,7 +143,7 @@ class ProductController extends Controller
         if ($product->save()) {
             foreach($attributes as $attribute) {
                 $cats = json_decode($attribute->categories);
-                if (in_array($request->category3, $cats) || in_array($request->category2, $cats)) {
+                if (in_array($request->category2, $cats)) {
                     ProductTag::where('product_id', $product->id)->where('attribute_id', $attribute->id)
                         ->update(['value' => json_encode($request->{strtolower($attribute->title)})]);
                 }

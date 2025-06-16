@@ -48,11 +48,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapTHCRoutes();
         $this->mapApiRoutes();
         $this->mapWebRoutes();
         $this->mapAdminRoutes();
-        $this->mapTHCSellerRoutes();
         $this->mapSellerRoutes();
     }
 
@@ -115,38 +113,6 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->as('seller.')
             ->group(base_path('routes/seller.php'));
-    }
-
-    /**
-     * Define the "thc" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapTHCRoutes()
-    {
-        Route::domain(config('app.domain2'))
-            ->middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/thc.php'));
-    }
-
-    /**
-     * Define the "thc seller" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapTHCSellerRoutes()
-    {
-        Route::domain(config('app.domain2'))
-            ->middleware('web')
-            ->prefix('seller')
-            ->namespace($this->namespace)
-            ->as('thc_seller.')
-            ->group(base_path('routes/thc_seller.php'));
     }
 
     /**

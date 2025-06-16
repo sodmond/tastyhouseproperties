@@ -16,7 +16,6 @@
         </div>
 
         <form class="form-inline search-full" action="javascript:void(0)" method="get">
-            <h3>Main Admin</h3>
             {{--<div class="form-group w-100">
                 <div class="Typeahead Typeahead--twitterUsers">
                     <div class="u-posRelative">
@@ -33,11 +32,6 @@
         </form>
         <div class="nav-right col-6 pull-right right-header p-0">
             <ul class="nav-menus">
-                <li>
-                    <a class="btn btn-theme btn-xs" href="{{ route('admin.thc.home') }}" target="_blank">
-                        THC &nbsp; <i class="ri-external-link-line"></i>
-                    </a>
-                </li>
                 <li>
                     <div class="mode">
                         <i class="ri-moon-line"></i>

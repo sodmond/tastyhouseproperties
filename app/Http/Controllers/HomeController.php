@@ -37,15 +37,10 @@ class HomeController extends Controller
     public function index()
     { #dd(url('/'));
         $adverts = Advert::all();
-        $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(30)->get();
-        $recentProducts = Product::orderByDesc('created_at')->get();
-        $recentPost = Blog::orderByDesc('published_at')->take(5)->get();
-        $primeSub = Subscription::where('end_date', '>', now())->where('type', 'prime')->pluck('seller_id');
-        $primeVendors = Seller::whereIn('id', $primeSub)->where('type', 'store')->inRandomOrder()->take(20)->get();
+        $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(24)->get();
+        $recentProducts = Product::orderByDesc('created_at')->take(20)->get();
         $plugview = DB::table('api_data')->where('name', 'plugview')->get()->keyBy('token_type');
-        $serviceCats = ProductCategory::where('id', 346)->orWhere('parent', 346)->pluck('id');
-        $vehicleCats = ProductCategory::whereIn('parent', [376,377,378,379,380])->orWhere('parent', 375)->pluck('id');
-        return view('home', compact('adverts', 'recentPost', 'primeVendors', 'primeProducts', 'recentProducts', 'plugview', 'serviceCats', 'vehicleCats'));
+        return view('home', compact('adverts', 'primeProducts', 'recentProducts', 'plugview'));
     }
 
     public function getCitiesforState($state_id)

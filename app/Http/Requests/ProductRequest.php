@@ -24,16 +24,15 @@ class ProductRequest extends FormRequest
     {
         return [
             'new'           => ['nullable', 'numeric'],
+            'category2'     => ['required', 'numeric'],
             'title'         => ['required', 'string', 'max:255'],
-            'condition'     => ['required', 'string', 'max:4'],
+            'condition'     => ['required', 'string', 'max:14'],
             'price_type'    => ['required', 'string', 'max:20'],
             'price'         => ['nullable', 'numeric'],
             'description'   => ['nullable', 'string', 'max:2000'],
             'city'          => ['required', 'integer', 'exists:cities,id'],
             'image'         => ['required_if_accepted:new', 'array', 'min:1', 'max:5'],
             'image.*'       => ['required_if_accepted:new', 'image', 'mimes:jpg,png,jpeg', 'max:1024', Rule::dimensions()->minHeight(370)->minWidth(370)],
-            'category2'     => ['nullable', 'required_without:category3', 'numeric'],
-            'category3'     => ['nullable', 'required_without:category2', 'numeric'],
         ];
     }
 

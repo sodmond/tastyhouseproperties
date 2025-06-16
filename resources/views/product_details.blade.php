@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="product-section">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div>
                 @if (count($errors))
@@ -83,8 +83,8 @@
 
                             <div class="product-contain">
                                 <p><i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}</p>
-                                @if($product->product_category_id != 346 && $category->parent != 346)
-                                    <p><strong>Condition:</strong> {{ ucwords($product->condition) }}</p>
+                                @if($product->condition != 'not-applicable')
+                                    <p><strong>Condition:</strong> {{ ucwords(str_replace('-', ' ', $product->condition)) }}</p>
                                 @endif
                                 @if(count($product->tags) > 0)
                                     @foreach ($product->tags as $tag)
@@ -283,7 +283,7 @@
 </section>
 
 <section class="product-list-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="title">
             <h2>Related Products</h2>
             <span class="title-leaf">

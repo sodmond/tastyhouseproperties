@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="section-b-space shop-section">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-3 col-lg-4">
                 <div class="left-box wow fadeInUp">

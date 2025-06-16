@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="user-dashboard-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-3 col-lg-4">
                 @include('seller.layouts.sidebar', ['activePage' => 'seller.products'])
@@ -74,21 +74,11 @@
                                     </div>
                                     <div class="col-md-12 mb-4">
                                         <div class="form-floating theme-form-floating">
-                                            <select class="form-control" id="category3" name="category3" placeholder="Sub-Category Item">
-                                                <option value="">- - - Select - - -</option>
-                                                @foreach($categories[2] as $category)
-                                                    <option value="{{ $category->id }}" @selected($cat_choice[2] == $category->id)>{{ ucwords(strtolower($category->title)) }}</option>
-                                                @endforeach
-                                            </select>
-                                            <label for="category3">Sub-Category Item (Optional)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mb-4">
-                                        <div class="form-floating theme-form-floating">
                                             <select class="form-control" id="condition" name="condition" placeholder="Condition" required>
                                                 <option value="">- - - Select - - -</option>
-                                                <option value="new" @selected($product->condition == 'new')>New</option>
-                                                <option value="used" @selected($product->condition == 'used')>Used</option>
+                                                <option value="newly-built" @selected($product->condition == 'newly-built')>Newly Built</option>
+                                                <option value="renovated" @selected($product->condition == 'renovated')>Renovated</option>
+                                                <option value="not-applicable" @selected($product->condition == 'renovated')>Not Applicable</option>
                                             </select>
                                             <label for="condition">Condition</label>
                                         </div>

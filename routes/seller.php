@@ -31,7 +31,7 @@ Route::group([], function(){
     Route::post('password/reset', [SellerBackend\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
-Route::group(['middleware' => ['auth:seller', 'verified', 'seller.type']], function () {
+Route::group(['middleware' => ['auth:seller', 'verified']], function () {
     Route::get('/', [SellerBackend\HomeController::class, 'home']);
     Route::get('home', [SellerBackend\HomeController::class, 'index'])->name('home');
     Route::post('request_approval', [SellerBackend\HomeController::class, 'requestApproval'])->name('approval');

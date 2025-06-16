@@ -3,7 +3,7 @@
 @section('content')
 <!-- Search Bar Section Start -->
 <section class="search-section">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-6 col-xl-8 mx-auto">
                 <div class="title d-block text-center">

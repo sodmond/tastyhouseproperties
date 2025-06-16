@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="log-in-section section-b-space">
-    <div class="container-fluid-lg w-100">
+    <div class="container-fluid-xs w-100">
         <div class="row">
             <div class="col-xxl-6 col-xl-5 col-lg-5 d-lg-block d-none ms-auto">
                 <div class="image-contain">

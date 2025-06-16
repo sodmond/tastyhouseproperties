@@ -11,9 +11,6 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3">
-                            <a class="btn btn-dark" href="{{ route('admin.newsletter') }}">Newsletter Subscription</a>
-                        </div>
-                        <div class="col-md-3 mb-3">
                             <a class="btn btn-primary" href="{{ route('admin.settings.adverts') }}">Advert Placement</a>
                         </div>
                         <div class="col-md-3 mb-3">
@@ -24,9 +21,6 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <a class="btn btn-success" href="{{ route('admin.settings.subpacks') }}">Subscription Packages</a>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <a class="btn btn-secondary" href="{{ route('admin.settings.plugview') }}">Plugview Newsroom</a>
                         </div>
                     </div>
                 </div>

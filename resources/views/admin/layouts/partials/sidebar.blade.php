@@ -104,22 +104,6 @@
                     </li>
 
                     <li class="sidebar-list">
-                        <a class="linear-icon-link sidebar-link sidebar-title {{ ($activePage == 'blog') ? 'active' : '' }}" href="javascript:void(0)">
-                            <i class="far fa-newspaper"></i>
-                            <span>Blog</span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li>
-                                <a href="{{ route('admin.blog') }}">All Articles</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('admin.blog.new') }}">Add New Article</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav" href="{{ route('admin.subscriptions') }}">
                             <i class="fas fa-credit-card"></i>
                             <span>Subscriptions</span>

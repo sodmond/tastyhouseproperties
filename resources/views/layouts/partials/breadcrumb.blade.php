@@ -1,5 +1,5 @@
-<section class="breadcrumb-section pt-0">
-    <div class="container-fluid-lg">
+<section class="breadcrumb-section pt-0" style="background-color:#FFF; border-radius:6px; box-shadow:0 2px 9px rgba(34,34,34,.07);">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumb-contain">

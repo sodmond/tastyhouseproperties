@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="user-dashboard-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-3 col-lg-4">
                 @include('seller.layouts.sidebar', ['activePage' => 'seller.products'])
@@ -69,14 +69,6 @@
                                             <label for="category2">Sub-Category</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 mb-4">
-                                        <div class="form-floating theme-form-floating">
-                                            <select class="form-control" id="category3" name="category3" placeholder="Sub-Category Item">
-                                                <option value="">- - - Select - - -</option>
-                                            </select>
-                                            <label for="category3">Sub-Category Item (Optional)</label>
-                                        </div>
-                                    </div>
                                     <div class="col-12">
                                         <div class="row" id="productTags2"></div>
                                     </div>
@@ -84,8 +76,9 @@
                                         <div class="form-floating theme-form-floating">
                                             <select class="form-control" id="condition" name="condition" placeholder="Condition" required>
                                                 <option value="">- - - Select - - -</option>
-                                                <option value="new" @selected(old('condition') == 'new')>New</option>
-                                                <option value="used" @selected(old('condition') == 'used')>Used</option>
+                                                <option value="newly-built" @selected(old('condition') == 'newly-built')>Newly Built</option>
+                                                <option value="renovated" @selected(old('condition') == 'renovated')>Renovated</option>
+                                                <option value="not-applicable" @selected(old('condition') == 'not-applicable')>Not Applicable</option>
                                             </select>
                                             <label for="condition">Condition</label>
                                         </div>

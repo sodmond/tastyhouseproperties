@@ -95,11 +95,7 @@ class ShopController extends Controller
         $cat3 = $this->convertToSQLArray([$category->id]);
         if ($category->level == 1) {
             $cat2 = ProductCategory::where('parent', $category->id)->pluck('id');
-            $cat3 = $this->convertToSQLArray(ProductCategory::whereIn('parent', $cat2)->pluck('id'));
             $cat2 = $this->convertToSQLArray($cat2);
-        }
-        if ($category->level == 2) {
-            $cat3 = $this->convertToSQLArray(ProductCategory::where('parent', $category->id)->pluck('id'));
         }
         $orderBy = 'orderByDesc';
         $orderField = 'created_at';
@@ -138,7 +134,6 @@ class ShopController extends Controller
                     if ($locationType == 'city') {
                         $products = Product::where('product_category_id', $category->id)->where('city_id', $locationId)
                             ->orWhereRaw("product_category_id IN $cat2 AND city_id = $locationId")
-                            ->orWhereRaw("product_category_id IN $cat3 AND city_id = $locationId")
                             ->havingBetween('price', [$minPrice, $maxPrice])
                             ->orderBy('prime_status', 'desc')
                             ->{$orderBy}($orderField)->paginate(20);
@@ -150,7 +145,6 @@ class ShopController extends Controller
                     $cities_str = $this->convertToSQLArray($cities); #dd($cat3);
                     $products = Product::whereRaw("product_category_id = $category->id AND city_id IN $cities_str")
                         ->orWhereRaw("product_category_id IN $cat2 AND city_id IN $cities_str")
-                        ->orWhereRaw("product_category_id IN $cat3 AND city_id IN $cities_str")
                         ->havingBetween('price', [$minPrice, $maxPrice])
                         ->orderBy('prime_status', 'desc')
                         ->{$orderBy}($orderField)->paginate(20);
@@ -160,7 +154,6 @@ class ShopController extends Controller
         }
         $products = Product::where('product_category_id', $category->id)
             ->orWhereRaw("product_category_id IN $cat2")
-            ->orWhereRaw("product_category_id IN $cat3")
             ->havingBetween('price', [$minPrice, $maxPrice])
             ->orderBy('prime_status', 'desc')
             ->{$orderBy}($orderField)->paginate(20);

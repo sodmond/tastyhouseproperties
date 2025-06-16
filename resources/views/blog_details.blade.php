@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="blog-section section-b-space">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row g-sm-4 g-3">
             <div class="col-xxl-9 col-xl-8 col-lg-7 order-lg-2 ratio_50">
                 <div class="blog-detail-image rounded-3 mb-4">

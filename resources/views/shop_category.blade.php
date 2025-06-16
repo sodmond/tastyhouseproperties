@@ -1,69 +1,44 @@
 @extends('layouts.app', ['title' => ucwords(strtolower($category->title)), 'activePage' => 'category'])
 
 @section('content')
-<section class="section-b-space shop-section">
-    <div class="container-fluid-lg">
+<!-- Category Section Start -->
+<section class="wow fadeInUp">
+    <div class="container-fluid-xs">
         <div class="row">
-            <div class="col-custom-3 order-2 order-md-2 order-lg-1 order-xl-1">
-                <div class="left-box wow fadeInUp">
-                    <div class="shop-left-sidebar">
-                        <div class="left-search-box">
-                            <form class="search-box" action="{{ route('shop.search') }}" method="GET">
-                                <input type="search" class="form-control" id="exampleFormControlInput1" name="search"
-                                    placeholder="Search....">
-                            </form>
-                        </div>
-
-                        <div class="accordion custom-accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne">
-                                        <span>Categories</span>
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-
-                                        <ul class="category-list custom-padding custom-heigh" style="max-height:100vw;">
-                                            @php 
-                                                $sidebar_cats = $th_categories1;
-                                                if ($category->level == 1) {
-                                                    $sidebar_cats = \App\Models\ProductCategory::where('parent', $category->id)->get();
-                                                }
-                                                if ($category->level == 2) {
-                                                    $sidebar_cats = \App\Models\ProductCategory::where('parent', $category->id)->get();
-                                                    if ($sidebar_cats->count() < 1) {
-                                                        $sidebar_cats = \App\Models\ProductCategory::where('parent', $category->parent)->get();
-                                                    }
-                                                }
-                                                if ($category->level == 3) {
-                                                    $sidebar_cats = \App\Models\ProductCategory::where('parent', $category->parent)->get();
-                                                }
-                                            @endphp
-                                            @foreach($sidebar_cats as $cat1)
-                                            <li>
-                                                <div class="form-check ps-0 m-0 category-list-box">
-                                                    <label class="form-check-label" for="fruit">
-                                                        <img src="{{ asset($cat1->icon ?? 'frontend/svg/right-arrow.svg') }}" alt="" style="max-width:20px; margin-right:5px;">
-                                                        @php $catSlug = \App\Models\ProductCategory::getSlug($cat1->title); @endphp
-                                                        <a class="name" href="{{ route('shop.category', ['id' => $cat1->id, 'slug' => $catSlug]) }}">
-                                                            {{ ucwords(strtolower($cat1->title)) }}</a>
-                                                        {{--<span class="number">(15)</span>--}}
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            @endforeach
-                                        </ul>
+            <div class="col-12">
+                <div class="slider-7_1 no-space shop-box no-arrow slick-dotted">
+                    <?php
+                    $catlevelSelection = ($category->level == 1) ? $category->id : $category->parent;
+                    $related_cats = \App\Models\ProductCategory::where('parent', $catlevelSelection)->get();
+                    ?>
+                    @foreach($related_cats as $cat)
+                        <div>
+                            @php 
+                                $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                                $catUrl = route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]);
+                            @endphp
+                            <div class="shop-category-box">
+                                <a href="{{ $catUrl }}">
+                                    <div class="shop-category-image">
+                                        <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
                                     </div>
-                                </div>
+                                    <div class="category-box-name">
+                                        <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-
-            <div class="col-custom- order-1 order-md-1 order-lg-2 order-xl-2">
+        </div>
+    </div>
+</section>
+<!-- Category Section End -->
+<section class="section-b-space shop-section">
+    <div class="container-fluid-xs">
+        <div class="row">
+            <div class="col-12 order-1 order-md-1 order-lg-2 order-xl-2">
                 <h5 class="text-content mb-4">Category: {{ ucwords(strtolower($category->title)) }}</h5>
                 <div class="show-button">
                     <div class="top-filter-menu-2">

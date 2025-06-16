@@ -1,16 +1,24 @@
 :root {
-    --theme-color: #F75709 !important;
+    --theme-color: #FF3300 !important;
     --theme-color-rgb: 13, 164, 135;
     --theme-color1: #CC731C !important;
     --theme-color1-rgb: 14, 148, 122;
     --theme-color2: linear-gradient(90.56deg, var(--theme-color1) 8.46%, var(--theme-color) 62.97%);
 }
+
+.theme-color-4 {
+  --theme-color: #FF3300;
+  --theme-color-rgb: 35, 150, 152;
+}
+
 .theme-light-bg {
     background:#F8E8E0;
 }
+
 header .navbar.navbar-expand-xl .navbar-nav .nav-link::before {
     content: "";
 }
+
 header .navbar.navbar-expand-xl .navbar-nav .dropdown-toggle::before {
     content: "";
     position: absolute;
@@ -30,12 +38,12 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .page-item.active .page-link {
-    background-color: #F75709;
-    border-color: #F75709;
+    background-color: #FF3300;
+    border-color: #FF3300;
 }
   
 .page-link {
-    color: #F75709;
+    color: #FF3300;
 }
   
 .page-link:hover {
@@ -58,7 +66,7 @@ header .onhover-dropdown .onhover-div-login {
   
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #F75709 !important;
+    background: #FF3300 !important;
     border-radius: 20px;
 }
   
@@ -75,7 +83,7 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .btn-animation {
-    background: linear-gradient(90deg, #F75709 0%, #F75709 100%) !important;
+    background: linear-gradient(90deg, #FF3300 0%, #FF3300 100%) !important;
 }
 
 .btn-animation:hover {
@@ -143,7 +151,7 @@ header .onhover-dropdown .onhover-div-login {
 
 .category-list li .category-list-box .form-check-label .name:hover{
     text-decoration: underline;
-    color: #F75709;
+    color: #FF3300;
 }
 
 .required::after {
@@ -211,7 +219,11 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .svg-theme-color {
-    filter: invert(56%) sepia(92%) saturate(2534%) hue-rotate(345deg) brightness(98%) contrast(98%) !important;
+    filter: invert(28%) sepia(93%) saturate(3753%) hue-rotate(0deg) brightness(101%) contrast(107%) !important;
+}
+
+.navbar-top a.web-logo {
+    display: none !important;
 }
 
 @media (max-width: 991px) {
@@ -234,6 +246,9 @@ header .onhover-dropdown .onhover-div-login {
         box-shadow:0 0 8px rgba(34,34,34,.13);
         background:#fff
     }
+    .navbar-top a.web-logo {
+        display: block !important;
+    }
 }
 
 .rating-input, .rating-clear {
@@ -242,8 +257,8 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 header .top-nav .navbar-top .middle-box .search-box .input-group button {
-    background-color: #F75709 !important;
-    border: 1px solid #F75709 !important;
+    background-color: #FF3300 !important;
+    border: 1px solid #FF3300 !important;
 }
 
 .product-box-slider.product-wrapper .slick-dots {
@@ -287,6 +302,9 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
         position: absolute !important;
         bottom: -20px !important;
     }
+    header .top-nav .navbar-top .rightside-box .right-side-menu .right-side.wishlist {
+        display: block !important;
+    }
 }
 
 .category-box::after {
@@ -295,7 +313,7 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
 
 .product-section-box .custom-nav .nav-item .nav-link:focus::after, .product-section-box .custom-nav .nav-item .nav-link:hover::after, .product-section-box .custom-nav .nav-item .nav-link.active::after {
     width: 100%;
-    background: #F75709 !important;
+    background: #FF3300 !important;
 }
 
 .th-list li {
@@ -303,8 +321,8 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
 }
 
 .category-menu ul li::before, .th-list li::before {
-    content: '\2192';
-    padding-right: 8px;
+    content: '';
+    padding-right: 0px;
     color: var(--theme-color);
 }
 
@@ -316,7 +334,7 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
 }
 
 header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .header-wishlist span {
-    background-color: #F75709 !important;
+    background-color: #FF3300 !important;
 }
 
 /* Custom Select2 Dropdown Styles Start */
@@ -330,7 +348,7 @@ header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .header-
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     width: auto !important;
-    background: #F75709 !important;
+    background: #FF3300 !important;
     color: #FFF !important;
     line-height: 30px !important;
 }
@@ -390,4 +408,38 @@ header .navbar-nav .dropdown-menu-2::after {
     object-fit: contain;
     margin: 0 auto;
     margin: 20px;
+}
+
+.custom-row .sidebar-col .category-menu ul li .category-list img {
+  width: calc(20px + 5*(100vw - 320px)/1600) !important;
+  height: calc(20px + 5*(100vw - 320px)/1600) !important;
+}
+
+.custom-row .sidebar-col .category-menu ul li .category-list h5 {
+  font-size: calc(12px + 2*(100vw - 320px)/1600) !important;
+}
+
+.slider-7_1 .shop-category-box:hover {
+    background: #FF3300 !important;
+}
+
+.slider-7_1 .shop-category-box .category-box-name {
+    background: transparent !important;
+}
+
+.slider-7_1 .shop-category-box:hover .category-box-name h6{
+    color: #FFF !important;
+}
+
+.slick-dots li button::before {
+    color: var(--theme-color) !important;
+    opacity: .35;
+}
+.slick-dots li.slick-active button::before {
+    color: var(--theme-color) !important;
+}
+
+header .location-box button .location-arrow {
+  width: 25px !important;
+  height: 25px !important;
 }

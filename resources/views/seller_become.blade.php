@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="seller-poster-section">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-xxl-4 order-lg-2">
                 <div class="poster-box">

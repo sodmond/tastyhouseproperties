@@ -39,68 +39,32 @@
     <link id="color-link-2" rel="stylesheet" type="text/css" href="{{ asset('frontend/css/custom.css') }}">
 </head>
 
-<body class="">
-
-    <!-- Loader Start -->
-    {{--<div class="fullpage-loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>--}}
-    <!-- Loader End -->
+<body class="theme-color-4">
 
     <!-- Header Start -->
     @include('layouts.partials.header')
     <!-- Header End -->
 
     <!-- mobile fix menu start -->
-    <div class="mobile-menu d-md-none d-block mobile-cart">
-        <ul>
-            <li class="{{ ($activePage == 'home') ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
-                    <i class="iconly-Home icli"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-
-            <li class="mobile-category {{ ($activePage == 'category') ? 'active' : '' }}">
-                <a href="javascript:void(0)">
-                    <i class="iconly-Category icli js-link"></i>
-                    <span>Category</span>
-                </a>
-            </li>
-
-            <li class="{{ ($activePage == 'search') ? 'active' : '' }}">
-                <a href="{{ route('shop.search') }}" class="search-box">
-                    <i class="iconly-Search icli"></i>
-                    <span>Search</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ route('user.wishlist') }}" class="notifi-wishlist {{ ($activePage == 'user.wishlist') ? 'active' : '' }}">
-                    <i class="iconly-Heart icli"></i>
-                    <span>Wishlist</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ route('shop') }}" class="{{ ($activePage == 'shop') ? 'active' : '' }}">
-                    <i class="iconly-Bag-2 icli fly-cate"></i>
-                    <span>Shop</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+    @include('layouts.partials.mobile_menu')
     <!-- mobile fix menu end -->
 
-    @if ($activePage != 'home')
-        @include('layouts.partials.breadcrumb')
-    @endif
-    @yield('content')
+    <!-- Content Section Start -->
+    <section class="product-section pt-0">
+        <div class="container-fluid p-0">
+            <div class="custom-row">
+                <div class="sidebar-col">
+                    @include('layouts.partials.menu')
+                </div>
+                <div class="content-col">
+                    @if ($activePage != 'home')
+                        @include('layouts.partials.breadcrumb')
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section Start -->
     @include('layouts.partials.footer')

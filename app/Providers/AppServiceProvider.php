@@ -4,8 +4,6 @@ namespace App\Providers;
 
 use App\Models\ProductCategory;
 use App\Models\State;
-use App\Models\THC\Category;
-use App\Models\THC\Deals;
 use App\Models\Wishlist;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
@@ -34,11 +32,6 @@ class AppServiceProvider extends ServiceProvider
         }
         try {
             $th_categories1 = ProductCategory::where('level', 1)->get();
-            $th_categories2 = ProductCategory::where('level', 2)->get();
-            $th_categories3 = ProductCategory::where('level', 3)->get();
-            $thc_categories1 = Category::where('level', 1)->get();
-            $thc_categories2 = Category::where('level', 2)->get();
-            $thc_deals = Deals::all();
             $currency = '₦';
             $th_states = State::orderBy('name')->get();
             $th_location_name = 'All Nigeria';
@@ -58,8 +51,7 @@ class AppServiceProvider extends ServiceProvider
                     }
                 }
             }
-            View::share(compact('th_categories1', 'th_categories2', 'th_categories3', 'thc_categories1', 
-                'thc_categories2', 'currency', 'th_states', 'th_location_name', 'thc_deals'));
+            View::share(compact('th_categories1', 'currency', 'th_states', 'th_location_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

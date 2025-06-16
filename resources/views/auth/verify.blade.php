@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="log-in-section section-b-space">
-    <div class="container-fluid-lg w-100">
+    <div class="container-fluid-xs w-100">
         <div class="row">
             <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto align-content-center">
                 <div class="log-in-box">

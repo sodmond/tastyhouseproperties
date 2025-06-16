@@ -81,13 +81,6 @@ Route::group(['middleware' => ['auth:admin', 'change.admindomain']], function ()
     Route::get('orders/export', [AdminBackend\OrderController::class, 'export'])->name('orders.export');
     Route::get('order/{id}', [AdminBackend\OrderController::class, 'get'])->name('order');
 
-    Route::get('blog', [AdminBackend\BlogController::class, 'index'])->name('blog');
-    Route::get('blog-new', [AdminBackend\BlogController::class, 'new'])->name('blog.new');
-    Route::post('blog-new', [AdminBackend\BlogController::class, 'addNew']);
-    Route::get('blog/{id}/edit', [AdminBackend\BlogController::class, 'edit'])->name('blog.edit');
-    Route::post('blog/{id}/update', [AdminBackend\BlogController::class, 'update'])->name('blog.update');
-    Route::get('blog/{id}/trash', [AdminBackend\BlogController::class, 'trash'])->name('blog.trash');
-
     Route::get('subscriptions', [AdminBackend\SubscriptionController::class, 'index'])->name('subscriptions');
     #Route::get('orders/export', [AdminBackend\SubscriptionController::class, 'export'])->name('subscriptions.export');
     Route::post('subscriptions/activation', [AdminBackend\SubscriptionController::class, 'verifyPayment'])->name('subscriptions.activate');
@@ -122,48 +115,4 @@ Route::group(['middleware' => ['auth:admin', 'change.admindomain']], function ()
 
     Route::get('newsletter', [AdminBackend\NewsletterController::class, 'index'])->name('newsletter');
     Route::get('newsletter/export', [AdminBackend\NewsletterController::class, 'export'])->name('newsletter.export');
-
-    Route::group(['prefix' => 'thc', 'as' => 'thc.'], function() {
-        Route::get('/', [AdminBackend\THC\HomeController::class, 'index'])->name('home');
-        Route::get('get-seller-products/{seller_id}', [AdminBackend\THC\HomeController::class, 'getSellerProducts']);
-
-        Route::get('categories', [AdminBackend\THC\CategoryController::class, 'index'])->name('categories');
-        Route::get('categories/export', [AdminBackend\THC\CategoryController::class, 'export'])->name('categories.export');
-        Route::get('categories/new', [AdminBackend\THC\CategoryController::class, 'new'])->name('category.new');
-        Route::post('categories/new', [AdminBackend\THC\CategoryController::class, 'newAdd'])->name('category.new.add');
-        Route::get('category/{id}/edit', [AdminBackend\THC\CategoryController::class, 'edit'])->name('category.edit');
-        Route::post('category/{id}/update', [AdminBackend\THC\CategoryController::class, 'update'])->name('category.update');
-        Route::get('category/{id}/trash', [AdminBackend\THC\CategoryController::class, 'trash'])->name('category.trash');
-
-        Route::get('addon_groups', [AdminBackend\THC\AttributeController::class, 'index'])->name('addon_groups');
-        Route::get('addon_groups/new', [AdminBackend\THC\AttributeController::class, 'new'])->name('addon_groups.new');
-        Route::post('addon_groups/new', [AdminBackend\THC\AttributeController::class, 'newAdd'])->name('addon_groups.new.add');
-        Route::get('addon_group/{id}/edit', [AdminBackend\THC\AttributeController::class, 'edit'])->name('addon_group.edit');
-        Route::post('addon_group/{id}/update', [AdminBackend\THC\AttributeController::class, 'update'])->name('addon_group.update');
-        Route::get('addon_group/{id}/trash', [AdminBackend\THC\AttributeController::class, 'trash'])->name('addon_group.trash');
-
-        Route::get('products', [AdminBackend\THC\ProductController::class, 'index'])->name('products');
-        Route::get('products/export', [AdminBackend\THC\ProductController::class, 'export'])->name('products.export');
-        Route::get('product/{id}', [AdminBackend\THC\ProductController::class, 'get'])->name('product');
-        Route::get('product/{id}/trash', [AdminBackend\THC\ProductController::class, 'trash'])->name('product.trash');
-        Route::get('product/{id}/restore', [AdminBackend\THC\ProductController::class, 'restore'])->name('product.restore');
-        Route::get('product/{id}/reports', [AdminBackend\THC\ProductController::class, 'abuseReports'])->name('product.reports');
-
-        Route::get('abuse_reports', [AdminBackend\THC\AbuseReportController::class, 'index'])->name('abusereports');
-        Route::get('abuse_report/{id}', [AdminBackend\THC\AbuseReportController::class, 'get'])->name('abusereport');
-
-        Route::get('orders', [AdminBackend\THC\OrderController::class, 'index'])->name('orders');
-        Route::get('orders/export', [AdminBackend\THC\OrderController::class, 'export'])->name('orders.export');
-        Route::get('order/{id}', [AdminBackend\THC\OrderController::class, 'get'])->name('order');
-
-        Route::group(['prefix' => 'settings', 'as' => 'settings.'], function() {
-            Route::get('adverts', [AdminBackend\THC\SettingsController::class, 'adverts'])->name('adverts');
-            Route::get('advert/{id}', [AdminBackend\THC\SettingsController::class, 'advert'])->name('advert');
-            Route::post('advert/{id}/update', [AdminBackend\THC\SettingsController::class, 'advertUpdate'])->name('advert.update');
-            
-            Route::get('deals', [AdminBackend\THC\SettingsController::class, 'deals'])->name('deals');
-            Route::get('deal/{id}', [AdminBackend\THC\SettingsController::class, 'deal'])->name('deal');
-            Route::post('deal/{id}/update', [AdminBackend\THC\SettingsController::class, 'dealUpdate'])->name('deal.update');
-        });
-    });
 });

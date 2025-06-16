@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('title');
             $table->double('price')->default(0);
             $table->enum('price_type', ['fixed', 'negotiable', 'call_for_price']);
-            $table->enum('condition', ['new', 'used']);
+            $table->enum('condition', ['newly-built', 'renovated', 'not-applicable']);
             $table->longText('description')->nullable();
             $table->json('image');
             $table->foreignIdFor(City::class)->constrained()->restrictOnDelete();

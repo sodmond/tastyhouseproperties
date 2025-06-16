@@ -4,7 +4,7 @@
 @section('content')
 <!-- Contact Box Section Start -->
 <section class="contact-box-section mb-4">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row g-lg-5 g-3 mb-4">
             <div class="col-lg-6">
                 <div class="left-sidebar-box">
