@@ -18,10 +18,10 @@ class OrderController extends Controller
     {
         if (isset($_GET['search'])) {
             $searchVal = $_GET['search'];
-            $orders = Order::where('code', 'LIKE', 'THS_%')->where('code', $searchVal)->orderByDesc('created_at')->paginate(10);
+            $orders = Order::where('code', $searchVal)->orderByDesc('created_at')->paginate(10);
             return view('admin.orders.index', compact('orders'));
         }
-        $orders = Order::where('code', 'LIKE', 'THS_%')->orderByDesc('created_at')->paginate(10);
+        $orders = Order::orderByDesc('created_at')->paginate(10);
         return view('admin.orders.index', compact('orders'));
     }
 

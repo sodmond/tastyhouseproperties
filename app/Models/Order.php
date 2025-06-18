@@ -28,10 +28,7 @@ class Order extends Model
 
     public static function orderCode()
     {
-        $prefix = 'THS_';
-        if (request()->server->get('SERVER_NAME') == config('app.domain2')) {
-            $prefix = 'THC_';
-        }
+        $prefix = 'THP_';
         return  $prefix . time() . strtoupper(Str::random(4));
     }
 }

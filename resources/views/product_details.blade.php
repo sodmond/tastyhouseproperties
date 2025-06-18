@@ -255,7 +255,7 @@
                     </div>
 
                     <!-- Banner Section -->
-                    @php 
+                    {{--@php 
                     $ad_sidebar = $adverts->where('slug', "product-page-sidebar")->first();
                     $adImage = asset('storage/advert/'.$ad_sidebar->image) ?? asset('img/adverts/ad_sidebar.gif');
                     $buttonText = $ad_sidebar->button_text ?? 'Click here';
@@ -275,7 +275,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
