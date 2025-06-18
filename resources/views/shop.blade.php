@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Shop', 'activePage' => 'shop'])
+@extends('layouts.app', ['title' => 'All Properties', 'activePage' => 'shop'])
 
 @section('content')
 <section class="section-b-space shop-section">

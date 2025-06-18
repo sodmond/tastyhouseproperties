@@ -1,62 +1,10 @@
-@extends('layouts.app', ['title' => 'Prime Shop', 'activePage' => 'shop'])
+@extends('layouts.app', ['title' => 'Prime Properties', 'activePage' => 'shop'])
 
 @section('content')
 <section class="section-b-space shop-section">
     <div class="container-fluid-xs">
         <div class="row">
-            <div class="col-custom-3 order-2 order-md-2 order-lg-1 order-xl-1">
-                <div class="left-box wow fadeInUp">
-                    <div class="shop-left-sidebar">
-                        <div class="left-search-box">
-                            <form class="search-box" action="{{ route('shop.search') }}" method="GET">
-                                <input type="search" class="form-control" id="exampleFormControlInput1" name="search"
-                                    placeholder="Search....">
-                            </form>
-                        </div>
-
-                        <div class="accordion custom-accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne">
-                                        <span>Categories</span>
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-
-                                        <ul class="category-list custom-padding custom-heigh" style="max-height:100vw;">
-                                            <li>
-                                                <div class="form-check ps-0 m-0 category-list-box">
-                                                    <label class="form-check-label" for="fruit">
-                                                        <img src="{{ asset('frontend/svg/premium.svg') }}" alt="" style="max-width:20px; margin-right:5px;">
-                                                        <a class="name" href="{{ route('shop.prime') }}">Prime Products</a>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            @foreach($th_categories1 as $cat1)
-                                            <li>
-                                                <div class="form-check ps-0 m-0 category-list-box">
-                                                    <label class="form-check-label" for="fruit">
-                                                        <img src="{{ asset($cat1->icon) }}" alt="" style="max-width:20px; margin-right:5px;">
-                                                        @php $catSlug = \App\Models\ProductCategory::getSlug($cat1->title); @endphp
-                                                        <a class="name" href="{{ route('shop.category', ['id' => $cat1->id, 'slug' => $catSlug]) }}">
-                                                            {{ ucwords(strtolower($cat1->title)) }}</a>
-                                                        {{--<span class="number">(15)</span>--}}
-                                                    </label>
-                                                </div>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-custom- order-1 order-md-1 order-lg-2 order-xl-2">
+            <div class="col-12 order-1 order-md-1 order-lg-2 order-xl-2">
                 <h5 class="text-content mb-4">@isset($locationData) Products in {{ $locationData->name }} @endisset</h5>
                 <div class="show-button">
                     <div class="top-filter-menu-2">
