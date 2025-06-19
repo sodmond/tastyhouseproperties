@@ -42,8 +42,8 @@ class ShopController extends Controller
                 $orderField = 'price';
             }
         }
-        $minPrice = 0;
-        $maxPrice = 100000000;
+        $minPrice = 50000;
+        $maxPrice = 1000000000;
         if (isset($_GET['price_range'])) {
             $price_range = explode(';', $_GET['price_range']);
             $minPrice = $price_range[0] ?? 0;
