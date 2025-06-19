@@ -171,6 +171,10 @@
     <div class="bg-overlay"></div>
     <!-- Bg overlay End -->
 
+    <form id="seller-logout-form" action="{{ route('seller.logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+
     <!-- latest jquery-->
     <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
 
