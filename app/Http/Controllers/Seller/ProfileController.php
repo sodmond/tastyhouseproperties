@@ -117,6 +117,7 @@ class ProfileController extends Controller
             }
             return back()->withErrors(['err_msg' => 'The NIN provided do not match your profile, please update your profile and try again']);
         }
+        Log::info($verNIN->json());
         return back()->withErrors(['err_msg' => 'Problem ecountered with verification, please try again.']);
     }
 }
