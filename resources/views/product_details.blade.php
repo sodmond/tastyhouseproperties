@@ -241,15 +241,18 @@
                     <!-- Trending Product -->
                     <div class="pt-25">
                         <div class="category-menu">
-                            <h3>Buyer and Seller Safety Disclaimer for Tastyhouse Stores</h3>
+                            <h3>Buyer and Seller Safety Disclaimer</h3>
 
                             <ul style="border-bottom:0px;">
-                                <li>As a buyer, we recommend you carefully review product details before making any purchase to ensure you're getting exactly what you expect.</li>
-                                <li>Tastyhouse Stores cannot guarantee the quality, authenticity, or condition of products sold by third-party sellers. To protect yourself, we encourage you to check reviews, ratings, and the seller’s reputation before completing your purchase.</li>
-                                <li>Tastyhouse Stores does not handle product delivery, so we urge you to ensure that sellers provide clear delivery details and expected delivery timelines.</li>
-                                <li>Return and refund policies are set by the seller. Before making a purchase, carefully review the seller's return policy to understand your rights in case you need to return an item.</li>
-                                <li>As Tastyhouse Stores is a marketplace platform, we do not directly control the products sold by third-party sellers. We advise you to research the seller and product thoroughly before committing to a purchase. Your safety and satisfaction are our priority, and we encourage you to report suspicious listings.</li>
-                                <li>Tastyhouse Stores is not liable for any damages, losses, or issues arising from your purchase or use of products sold by third-party sellers. It is essential for buyers to exercise caution, conduct proper research, and communicate with sellers directly if any concerns arise.</li>
+                                <li>This advertisement and the information related to it are provided and maintained by the advertiser. Tastyhouseproperties.com is not responsible and can not guarantee the accuracy or completeness of this advertisement. Please note that every advert for rent, lease or for sale should be vetted thoroughly with a Land or Property Lawyer before engaging in a business transaction. </li>
+
+                                <li>Do not travel to view properties or land alone. Share your location with your loved ones to inform them of your location before conducting any viewing. Be wary of buyers or sellers asking to use Tastyhouse Properties Payments on this platform' because Tastyhouse Properties doesn't offer these services currently. Requests from WhatsApp or SMS could be scams.</li>
+
+                                <li>Only access Tastyhouse Properties from Tastyhouseproperties.com and do not follow links sent by other users.</li>
+
+                                <li>Share photos and ask lots of questions about the property/land you're renting, buying and selling, and seek legal advice before selling, purchasing or renting. If an ad or reply sounds too good to be true, it probably is. Don’t become a victim of a scam. </li>
+
+                                <li>Use the 'Message' button on Tastyhouseproperties.com for your safety and privacy. Don't reply to email addresses hidden in text and pictures. Beware of fake sites and invoices and trade in person and always meet sellers/buyers in public first for your safety.</li>
                             </ul>
                         </div>
                     </div>
