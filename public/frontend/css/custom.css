@@ -412,12 +412,12 @@ header .navbar-nav .dropdown-menu-2::after {
 }
 
 .custom-row .sidebar-col .category-menu ul li .category-list img {
-  width: calc(20px + 5*(100vw - 320px)/1600) !important;
-  height: calc(20px + 5*(100vw - 320px)/1600) !important;
+  width: calc(22px + 5*(100vw - 320px)/1600) !important;
+  height: calc(22px + 5*(100vw - 320px)/1600) !important;
 }
 
 .custom-row .sidebar-col .category-menu ul li .category-list h5 {
-  font-size: calc(12px + 2*(100vw - 320px)/1600) !important;
+  font-size: calc(13px + 3*(100vw - 320px)/1600) !important;
 }
 
 .slider-7_1 .shop-category-box:hover {
