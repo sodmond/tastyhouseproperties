@@ -1,5 +1,5 @@
 :root {
-    --theme-color: #FF3300 !important;
+    --theme-color: #F75709 !important;
     --theme-color-rgb: 13, 164, 135;
     --theme-color1: #CC731C !important;
     --theme-color1-rgb: 14, 148, 122;
@@ -7,7 +7,7 @@
 }
 
 .theme-color-4 {
-  --theme-color: #FF3300;
+  --theme-color: #F75709;
   --theme-color-rgb: 35, 150, 152;
 }
 
@@ -38,12 +38,12 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .page-item.active .page-link {
-    background-color: #FF3300;
-    border-color: #FF3300;
+    background-color: #F75709;
+    border-color: #F75709;
 }
   
 .page-link {
-    color: #FF3300;
+    color: #F75709;
 }
   
 .page-link:hover {
@@ -66,7 +66,7 @@ header .onhover-dropdown .onhover-div-login {
   
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #FF3300 !important;
+    background: #F75709 !important;
     border-radius: 20px;
 }
   
@@ -83,7 +83,7 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .btn-animation {
-    background: linear-gradient(90deg, #FF3300 0%, #FF3300 100%) !important;
+    background: linear-gradient(90deg, #F75709 0%, #F75709 100%) !important;
 }
 
 .btn-animation:hover {
@@ -151,7 +151,7 @@ header .onhover-dropdown .onhover-div-login {
 
 .category-list li .category-list-box .form-check-label .name:hover{
     text-decoration: underline;
-    color: #FF3300;
+    color: #F75709;
 }
 
 .required::after {
@@ -219,7 +219,8 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 .svg-theme-color {
-    filter: invert(28%) sepia(93%) saturate(3753%) hue-rotate(0deg) brightness(101%) contrast(107%) !important;
+    /*filter: invert(28%) sepia(93%) saturate(3753%) hue-rotate(0deg) brightness(101%) contrast(107%) !important;*/
+    filter: invert(56%) sepia(92%) saturate(2534%) hue-rotate(345deg) brightness(98%) contrast(98%) !important;
 }
 
 .navbar-top a.web-logo {
@@ -257,8 +258,8 @@ header .onhover-dropdown .onhover-div-login {
 }
 
 header .top-nav .navbar-top .middle-box .search-box .input-group button {
-    background-color: #FF3300 !important;
-    border: 1px solid #FF3300 !important;
+    background-color: #F75709 !important;
+    border: 1px solid #F75709 !important;
 }
 
 .product-box-slider.product-wrapper .slick-dots {
@@ -313,7 +314,7 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
 
 .product-section-box .custom-nav .nav-item .nav-link:focus::after, .product-section-box .custom-nav .nav-item .nav-link:hover::after, .product-section-box .custom-nav .nav-item .nav-link.active::after {
     width: 100%;
-    background: #FF3300 !important;
+    background: #F75709 !important;
 }
 
 .th-list li {
@@ -334,7 +335,7 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
 }
 
 header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .header-wishlist span {
-    background-color: #FF3300 !important;
+    background-color: #F75709 !important;
 }
 
 /* Custom Select2 Dropdown Styles Start */
@@ -348,7 +349,7 @@ header .top-nav .navbar-top .rightside-box .right-side-menu .right-side .header-
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     width: auto !important;
-    background: #FF3300 !important;
+    background: #F75709 !important;
     color: #FFF !important;
     line-height: 30px !important;
 }
@@ -420,7 +421,7 @@ header .navbar-nav .dropdown-menu-2::after {
 }
 
 .slider-7_1 .shop-category-box:hover {
-    background: #FF3300 !important;
+    background: #F75709 !important;
 }
 
 .slider-7_1 .shop-category-box .category-box-name {

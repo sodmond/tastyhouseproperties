@@ -7,11 +7,11 @@
         <div class="col-xxl-12 col-xl-12 col-md-12">
             @php 
             $ad_big = $adverts->where('slug', "homepage-big")->first();
-            $adImage = asset('storage/advert/'.$ad_big->image) ?? asset('img/adverts/ad_big.jpg');
+            $adImage = asset('storage/advert/'.$ad_big->image) ?? asset('img/adverts/ad_big.png');
             $buttonText = $ad_big->button_text ?? 'Click here';
             $adUrl = $ad_big->url ?? '#';
             if ($ad_big->end_date < date('Y-m-d')) {
-                $adImage = asset('img/adverts/ad_big.jpg');
+                $adImage = asset('img/adverts/ad_big.png');
                 $buttonText = 'Contact';
                 $adUrl = route('advertise');
             }
