@@ -7,7 +7,7 @@
 }
 
 .log-in-section::after{
-    background-image: url('../images/bg-01.png') !important;
+    background-image: url('../images/bg-01.jpg') !important;
     background-size: cover;
     background-position: center;
 }
