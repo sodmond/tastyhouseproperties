@@ -72,7 +72,7 @@
                                             <label for="category2">Sub-Category</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 mb-4">
+                                    <div class="col-md-6 mb-4">
                                         <div class="form-floating theme-form-floating">
                                             <select class="form-control" id="condition" name="condition" placeholder="Condition" required>
                                                 <option value="">- - - Select - - -</option>
@@ -81,6 +81,12 @@
                                                 <option value="not-applicable" @selected($product->condition == 'renovated')>Not Applicable</option>
                                             </select>
                                             <label for="condition">Condition</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="text" class="form-control" id="property_size" name="property_size" placeholder="Property Size" value="{{ $product->property_size }}">
+                                            <label for="property_size">Property Size</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
@@ -98,6 +104,37 @@
                                         <div class="form-floating theme-form-floating">
                                             <input type="number" class="form-control" id="price" name="price" placeholder="Price" value="{{ $product->price }}">
                                             <label for="price">Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <select class="form-control" id="rent_type" name="rent_type" placeholder="Rent Type">
+                                                <option value="">- - - Select - - -</option>
+                                                <option value="annum" @selected($product->rent_type == 'annum')>per Annum</option>
+                                                <option value="quarter" @selected($product->rent_type == 'quarter')>per Quarter</option>
+                                                <option value="month" @selected($product->rent_type == 'month')>per Month</option>
+                                                <option value="week" @selected($product->rent_type == 'week')>per Week</option>
+                                                <option value="day" @selected($product->rent_type == 'day')>per Day</option>
+                                            </select>
+                                            <label for="rent_type">Rent Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="legal_fee" name="legal_fee" placeholder="Legal Fee" value="{{ $product->legal_fee }}">
+                                            <label for="legal_fee">Legal Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="caution_fee" name="caution_fee" placeholder="Caution Fee" value="{{ $product->caution_fee }}">
+                                            <label for="caution_fee">Caution Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="service_charge" name="service_charge" placeholder="Service Charge" value="{{ $product->service_charge }}">
+                                            <label for="service_charge">Service Charge</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -247,17 +284,25 @@
                 $(parentDiv).parent('div').remove(); x--;
                 //console.log(x);
             });
+
+            removeRentOpt($('#category1').val());
         });
         $('#category1').change(function(){
             let cat_id = $(this).val();
             let cat_url = $('#getSubCategoriesLink').val() + '/' + cat_id; 
             getSubCategories(cat_url, 2);
-            $('#category3').html('<option value="">- - - Select - - -</option>')
+            removeRentOpt(cat_id);
         });
-        $('#category2').change(function(){
-            let cat_id = $(this).val();
-            let cat_url = $('#getSubCategoriesLink').val() + '/' + cat_id; 
-            getSubCategories(cat_url, 3);
-        });
+        // Remove Rent Options from Non-Rent Categories
+        function removeRentOpt(cat_id) {
+            let rent_cats = ["1","3","5","7","8","9"];
+            if (!rent_cats.includes(cat_id)) {
+                //alert(cat_id);
+                $('#rent_type').hide();
+                $('#legal_fee').hide();
+                $('#caution_fee').hide();
+                $('#service_charge').hide();
+            }
+        }
     </script>
 @endpush

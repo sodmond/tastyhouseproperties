@@ -37,7 +37,7 @@ class HomeController extends Controller
     public function index()
     { #dd(url('/'));
         $adverts = Advert::all();
-        $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(24)->get();
+        $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(10)->get();
         $recentProducts = Product::orderByDesc('created_at')->take(20)->get();
         $plugview = DB::table('api_data')->where('name', 'plugview')->get()->keyBy('token_type');
         return view('home', compact('adverts', 'primeProducts', 'recentProducts', 'plugview'));
@@ -81,7 +81,7 @@ class HomeController extends Controller
             'recaptcha' => 'You need to complete the recaptcha field'
         ]);
         try {
-            Mail::to('info@tastyhousestores.com')->send(new ContactForm($request->except(['_token', 'g-recaptcha-response'])));
+            Mail::to('info@tastyhouseproperties.com')->send(new ContactForm($request->except(['_token', 'g-recaptcha-response'])));
             return back()->with('success', 'Contact form has been submitted, we will get back to you shortly.');
         } catch(\Exception $e) {
             Log:info($e->getMessage());
@@ -148,7 +148,7 @@ class HomeController extends Controller
             'recaptcha' => 'You need to complete the recaptcha field'
         ]); #dd($request->except(['_token', 'g-recaptcha-response']));
         try {
-            Mail::to('advertise@tastyhousestores.com')->send(new ContactForm($request->except(['_token', 'g-recaptcha-response'])));
+            Mail::to('advertise@tastyhouseproperties.com')->send(new ContactForm($request->except(['_token', 'g-recaptcha-response'])));
             return back()->with('success', 'Form has been submitted, we will get back to you shortly.');
         } catch(\Exception $e) {
             Log:info($e->getMessage());

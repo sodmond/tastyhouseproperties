@@ -51,6 +51,11 @@ class ProductController extends Controller
         $product->slug = genrateSlug([$request->title, $request->condition]);
         $product->description = $request->description;
         $product->city_id = $request->city;
+        $product->property_size = $request->property_size;
+        $product->rent_type = $request->rent_type;
+        $product->legal_fee = $request->legal_fee ?? 0;
+        $product->caution_fee = $request->caution_fee ?? 0;
+        $product->service_charge = $request->service_charge ?? 0;
         $images = [];
         foreach ($request->file('image') as $image) {
             $imgName = Str::random().'.'.$image->extension();
@@ -118,6 +123,11 @@ class ProductController extends Controller
         $product->slug = genrateSlug([$request->title, $request->condition]);
         $product->description = $request->description;
         $product->city_id = $request->city;
+        $product->property_size = $request->property_size;
+        $product->rent_type = $request->rent_type;
+        $product->legal_fee = $request->legal_fee ?? 0;
+        $product->caution_fee = $request->caution_fee ?? 0;
+        $product->service_charge = $request->service_charge ?? 0;
         if(!empty($request->image)) {
             $productImages = json_decode($product->image);
             foreach($request->file('image') as $key => $image) {

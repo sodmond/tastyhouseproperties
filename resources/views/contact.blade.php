@@ -47,7 +47,7 @@
                                             </div>
 
                                             <div class="contact-detail-contain">
-                                                <p>support@tastyhousestores.com</p>
+                                                <p>support@tastyhouseproperties.com</p>
                                             </div>
                                         </div>
                                     </div>

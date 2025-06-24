@@ -1435,8 +1435,42 @@ $('.banner-slider').slick({
             slidesToShow: 1,
             fade: true,
         }
+    },]
+});
+
+$('.banner-slider-1').slick({
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    dots: true,
+    /* responsive: [{
+        breakpoint: 1387,
+        settings: {
+            slidesToShow: 3,
+        }
     },
-    ]
+    {
+        breakpoint: 966,
+        settings: {
+            slidesToShow: 2,
+        }
+    },
+    {
+        breakpoint: 34,
+        settings: {
+            slidesToShow: 2,
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+            fade: true,
+        }
+    },]*/
 });
 
 $('.category-panel-slider').slick({

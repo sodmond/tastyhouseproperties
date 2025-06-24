@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Banner Section Start -->
-<div class="section-b-space">
+{{--<div class="section-b-space">
     <div class="row g-md-4 g-3">
         <div class="col-xxl-12 col-xl-12 col-md-12">
             @php 
@@ -27,6 +27,34 @@
             </div>
         </div>
     </div>
+</div>--}}
+<div class="banner-section section-b-space ratio_60 wow fadeInUp" id="advert-big">
+    <div class="banner-slider-1 pt-3">
+        @php
+            $ad_slider = $adverts->where('slug', 'homepage-big');
+            $num = 1;
+        @endphp
+        @foreach($ad_slider as $ad)
+            @php
+            $adImage = asset('storage/advert/'.$ad->image) ?? asset('img/adverts/ad_big_'.$num.'.jpg');
+            $buttonText = $ad->button_text ?? 'Contact';
+            $adUrl = $ad->url ?? '#';
+            if ($ad->end_date < date('Y-m-d')) {
+                $adImage = asset('img/adverts/ad_big_'.$num.'.jpg');
+                $buttonText = 'Contact';
+                $adUrl = route('advertise');
+            }
+            @endphp
+            <div>
+                <div class="banner-contain hover-effect">
+                    <a href="{{ $adUrl }}" target="_blank">
+                        <img src="{{ $adImage }}" class="bg-img blur-up lazyload" alt="">
+                    </a>
+                </div>
+            </div>
+            @php $num++ @endphp
+        @endforeach
+    </div>
 </div>
 <!-- Banner Section End -->
 
@@ -36,7 +64,7 @@
     <p>Shop our exclusive 'Prime Properties' - featured items handpicked for you by our trusted vendors!</p>
 </div>
 
-<div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+<div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
     @foreach($primeProducts as $product)
         <div>
             <div class="product-box-3 h-100 wow fadeInUp">
@@ -241,7 +269,7 @@
         <h2 class="text-theme font-sm">Newly Added Properties</h2>
         <p>The Latest Drops You’ll Want in Your Cart</p>
     </div>
-    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
         @foreach($recentProducts as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp">

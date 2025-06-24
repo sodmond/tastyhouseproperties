@@ -72,7 +72,7 @@
                                     <div class="col-12">
                                         <div class="row" id="productTags2"></div>
                                     </div>
-                                    <div class="col-md-12 mb-4">
+                                    <div class="col-md-6 mb-4">
                                         <div class="form-floating theme-form-floating">
                                             <select class="form-control" id="condition" name="condition" placeholder="Condition" required>
                                                 <option value="">- - - Select - - -</option>
@@ -81,6 +81,12 @@
                                                 <option value="not-applicable" @selected(old('condition') == 'not-applicable')>Not Applicable</option>
                                             </select>
                                             <label for="condition">Condition</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="text" class="form-control" id="property_size" name="property_size" placeholder="Property Size" value="{{ old('property_size') }}">
+                                            <label for="property_size">Property Size</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
@@ -98,6 +104,37 @@
                                         <div class="form-floating theme-form-floating">
                                             <input type="number" class="form-control" id="price" name="price" placeholder="Price" value="{{ old('price') }}">
                                             <label for="price">Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <select class="form-control" id="rent_type" name="rent_type" placeholder="Rent Type">
+                                                <option value="">- - - Select - - -</option>
+                                                <option value="annum" @selected(old('rent_type') == 'annum')>per Annum</option>
+                                                <option value="quarter" @selected(old('rent_type') == 'quarter')>per Quarter</option>
+                                                <option value="month" @selected(old('rent_type') == 'month')>per Month</option>
+                                                <option value="week" @selected(old('rent_type') == 'week')>per Week</option>
+                                                <option value="day" @selected(old('rent_type') == 'day')>per Day</option>
+                                            </select>
+                                            <label for="rent_type">Rent Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="legal_fee" name="legal_fee" placeholder="Legal Fee" value="{{ old('legal_fee') }}">
+                                            <label for="legal_fee">Legal Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="caution_fee" name="caution_fee" placeholder="Caution Fee" value="{{ old('caution_fee') }}">
+                                            <label for="caution_fee">Caution Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="service_charge" name="service_charge" placeholder="Service Charge" value="{{ old('service_charge') }}">
+                                            <label for="service_charge">Service Charge</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -214,28 +251,18 @@
                 //console.log(x);
             });
 
-            // Vehicle Selection - Change Sub-Cat Item to Make
-            if ($('#category1').val() == 375) {
-                $('label[for=category3]').text('Make');
-                $('label[for=category3]').addClass('required');
-                $('#category3').attr('required', 'required');
-            }
+            removeRentOpt($('#category1').val());
         });
         catOneChange($('#category1').val());
         $('#category1').change(function(){
             let cat_id = $(this).val();
             catOneChange(cat_id);
+            removeRentOpt(cat_id);
         });
         function catOneChange(cat_id) {
             let cat_url = $('#getSubCategoriesLink').val() + '/' + cat_id; 
             getSubCategories(cat_url, 2);
-            $('#category3').html('<option value="">- - - Select - - -</option>')
         }
-        $('#category2').change(function(){
-            let cat_id = $(this).val();
-            let cat_url = $('#getSubCategoriesLink').val() + '/' + cat_id; 
-            getSubCategories(cat_url, 3);
-        });
         $('#category2').change(function() {
             let cat_id = $(this).val();
             getProductTags(cat_id, 2);
@@ -255,11 +282,6 @@
                 });
                 $('#condition').parent().parent().css('display', 'block');
             }
-        });
-
-        $('#category3').change(function() {
-            let cat_id = $(this).val();
-            getProductTags(cat_id, 3);
         });
 
         function getProductTags(cat_id, level) {
@@ -300,16 +322,21 @@
             });
         }
 
-        // Vehicle Selection - Change Sub-Cat Item to Make
-        $('#category1').change(function() {
-            if ($(this).val() == 375) {
-                $('label[for=category3]').text('Make');
-                $('label[for=category3]').addClass('required');
-                $('#category3').attr('required', 'required');
+        // Remove Rent Options from Non-Rent Categories
+        function removeRentOpt(cat_id) {
+            let rent_cats = ["1","3","5","7","8","9"];
+            if (rent_cats.includes(cat_id)) {
+                //alert(cat_id);
+                $('#rent_type').parent().parent().show();
+                $('#legal_fee').parent().parent().show();
+                $('#caution_fee').parent().parent().show();
+                $('#service_charge').parent().parent().show();
             } else {
-                $('label[for=category3]').text('Sub-Category Item (Optional)');
-                $('#category3').attr('required', 'required');
+                $('#rent_type').parent().parent().hide();
+                $('#legal_fee').parent().parent().hide();
+                $('#caution_fee').parent().parent().hide();
+                $('#service_charge').parent().parent().hide();
             }
-        });
+        }
     </script>
 @endpush

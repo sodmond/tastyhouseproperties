@@ -74,23 +74,41 @@
                                     @if(!in_array($product->price_type, ['fixed', 'negotiable']))
                                         <span class="theme-color">{{ ucwords(str_replace('_', ' ', $product->price_type)) }}</span>
                                     @elseif($product->price_type == 'negotiable')
-                                        <span class="theme-color">{{ $currency.number_format($product->price, 2) }} <small class="text-dark">Negotiable</small></span>
+                                        <span class="theme-color">{{ $currency.number_format($product->price, 2) }} 
+                                            @if($product->rent_type != '')
+                                                <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                            @endif
+                                            <br><small class="text-dark">Negotiable</small>
+                                        </span>
                                     @else
-                                        <span class="theme-color">{{ $currency.number_format($product->price, 2) }}</span>
+                                        <span class="theme-color">{{ $currency.number_format($product->price, 2) }}
+                                            @if($product->rent_type != '')
+                                                <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                            @endif
+                                        </span>
                                     @endif
                                 </h3>
                             </div>
 
                             <div class="product-contain">
-                                <p><i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}</p>
-                                @if($product->condition != 'not-applicable')
-                                    <p><strong>Condition:</strong> {{ ucwords(str_replace('-', ' ', $product->condition)) }}</p>
-                                @endif
-                                @if(count($product->tags) > 0)
-                                    @foreach ($product->tags as $tag)
-                                        <p>@php echo '<strong>' . $tag->attribute->title .':</strong> '. implode(',', json_decode($tag->value)) @endphp</p>
-                                    @endforeach
-                                @endif
+                                <div class="row">
+                                    <p class="col-md-12 mb-3"><i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}</p>
+                                    @if($product->condition != 'not-applicable')
+                                        <div class="col-6 mb-3"><strong>Condition:</strong><br> {{ ucwords(str_replace('-', ' ', $product->condition)) }}</div>
+                                    @endif
+                                    @if($product->property_size != '')
+                                        <div class="col-6 mb-3"><strong>Property Size:</strong><br> {{ $product->property_size }}</div>
+                                    @endif
+                                    @if($product->legal_fee != 0)
+                                        <div class="col-6 mb-3"><strong>Legal Fee:</strong><br> {{ $currency.number_format($product->legal_fee) }}</div>
+                                    @endif
+                                    @if($product->caution_fee != 0)
+                                        <div class="col-6 mb-3"><strong>Caution Fee:</strong><br> {{ $currency.number_format($product->caution_fee) }}</div>
+                                    @endif
+                                    @if($product->service_charge != 0)
+                                        <div class="col-6 mb-3"><strong>Service Charge:</strong><br> {{ $currency.number_format($product->service_charge) }}</div>
+                                    @endif
+                                </div>
                             </div>
 
                             
@@ -136,6 +154,18 @@
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 wow fadeInUp">
+                        <div class="product-contain">
+                            @if(count($product->tags) > 0)
+                                <div class="row">
+                                    @foreach ($product->tags as $tag)
+                                        <p class="col-2 col-md-4 col-xxl-3">@php echo '<strong>' . $tag->attribute->title .':</strong><br>'. implode(', ', json_decode($tag->value)) @endphp</p>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                     </div>
 

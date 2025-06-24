@@ -23,16 +23,21 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'new'           => ['nullable', 'numeric'],
-            'category2'     => ['required', 'numeric'],
-            'title'         => ['required', 'string', 'max:255'],
-            'condition'     => ['required', 'string', 'max:14'],
-            'price_type'    => ['required', 'string', 'max:20'],
-            'price'         => ['nullable', 'numeric'],
-            'description'   => ['nullable', 'string', 'max:2000'],
-            'city'          => ['required', 'integer', 'exists:cities,id'],
-            'image'         => ['required_if_accepted:new', 'array', 'min:1', 'max:5'],
-            'image.*'       => ['required_if_accepted:new', 'image', 'mimes:jpg,png,jpeg', 'max:1024', Rule::dimensions()->minHeight(370)->minWidth(370)],
+            'new'               => ['nullable', 'numeric'],
+            'category2'         => ['required', 'numeric'],
+            'title'             => ['required', 'string', 'max:255'],
+            'condition'         => ['required', 'string', 'max:14'],
+            'price_type'        => ['required', 'string', 'max:20'],
+            'price'             => ['nullable', 'numeric'],
+            'description'       => ['nullable', 'string', 'max:2000'],
+            'city'              => ['required', 'integer', 'exists:cities,id'],
+            'image'             => ['required_if_accepted:new', 'array', 'min:1', 'max:5'],
+            'image.*'           => ['required_if_accepted:new', 'image', 'mimes:jpg,png,jpeg', 'max:1024', Rule::dimensions()->minHeight(370)->minWidth(370)],
+            'property_size'     => ['nullable', 'string', 'max:255'],
+            'rent_type'         => ['nullable', 'string', 'max:7'],
+            'legal_fee'         => ['nullable', 'numeric'],
+            'caution_fee'       => ['nullable', 'numeric'],
+            'service_charge'    => ['nullable', 'numeric'],
         ];
     }
 

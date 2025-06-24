@@ -1,40 +1,6 @@
 @extends('layouts.app', ['title' => ucwords(strtolower($category->title)), 'activePage' => 'category'])
 
 @section('content')
-<!-- Category Section Start -->
-<section class="wow fadeInUp">
-    <div class="container-fluid-xs">
-        <div class="row">
-            <div class="col-12">
-                <div class="slider-7_1 no-space shop-box no-arrow slick-dotted">
-                    <?php
-                    $catlevelSelection = ($category->level == 1) ? $category->id : $category->parent;
-                    $related_cats = \App\Models\ProductCategory::where('parent', $catlevelSelection)->get();
-                    ?>
-                    @foreach($related_cats as $cat)
-                        <div>
-                            @php 
-                                $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
-                                $catUrl = route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]);
-                            @endphp
-                            <div class="shop-category-box">
-                                <a href="{{ $catUrl }}">
-                                    <div class="shop-category-image">
-                                        <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
-                                    </div>
-                                    <div class="category-box-name">
-                                        <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Category Section End -->
 <section class="section-b-space shop-section">
     <div class="container-fluid-xs">
         <div class="row">
@@ -184,4 +150,38 @@
         </div>
     </div>
 </section>
+<!-- Category Section Start -->
+<section class="section-b-space wow fadeInUp">
+    <div class="container-fluid-xs">
+        <div class="row">
+            <div class="col-12">
+                <div class="slider-7_1 no-space shop-box no-arrow slick-dotted">
+                    <?php
+                    $catlevelSelection = ($category->level == 1) ? $category->id : $category->parent;
+                    $related_cats = \App\Models\ProductCategory::where('parent', $catlevelSelection)->get();
+                    ?>
+                    @foreach($related_cats as $cat)
+                        <div>
+                            @php 
+                                $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                                $catUrl = route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]);
+                            @endphp
+                            <div class="shop-category-box">
+                                <a href="{{ $catUrl }}">
+                                    <div class="shop-category-image">
+                                        <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
+                                    </div>
+                                    <div class="category-box-name">
+                                        <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Category Section End -->
 @endsection

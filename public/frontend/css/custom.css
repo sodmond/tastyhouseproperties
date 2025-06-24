@@ -444,3 +444,9 @@ header .location-box button .location-arrow {
   width: 25px !important;
   height: 25px !important;
 }
+
+@media (min-width: 991px) {
+    #advert-big .banner-contain a {
+        max-height: 600px;
+    }
+}
