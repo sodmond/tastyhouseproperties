@@ -23,6 +23,7 @@
                         <table class="table all-package theme-table" >
                             <thead>
                                 <tr>
+                                    <th>Icon</th>
                                     <th>Title</th>
                                     <th>Values</th>
                                     <th>Option</th>
@@ -32,6 +33,7 @@
                             <tbody>
                                 @foreach ($attributes as $attribute)
                                 <tr>
+                                    <td><img src="{{ asset('storage/attribute/icon/'.$attribute->icon) }}" alt="" style="max-width:30px;"></td>
                                     <td>
                                         <div class="user-name"><span>{{ $attribute->title }}</span></div>
                                     </td>

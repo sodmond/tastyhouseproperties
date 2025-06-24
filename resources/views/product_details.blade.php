@@ -162,7 +162,13 @@
                             @if(count($product->tags) > 0)
                                 <div class="row">
                                     @foreach ($product->tags as $tag)
-                                        <p class="col-2 col-md-4 col-xxl-3">@php echo '<strong>' . $tag->attribute->title .':</strong><br>'. implode(', ', json_decode($tag->value)) @endphp</p>
+                                        <p class="col-2 col-md-4 col-xxl-3 text-center">
+                                            @php 
+                                                echo '<img src="'. asset('storage/attribute/icon/'.$tag->attribute->icon) .'" alt="" style="max-width:30px;"><br>'. 
+                                                    implode(', ', json_decode($tag->value));
+                                                echo (in_array($tag->attribute_id, [1, 4]) ? '' : ' '.$tag->attribute->title);
+                                            @endphp
+                                        </p>
                                     @endforeach
                                 </div>
                             @endif

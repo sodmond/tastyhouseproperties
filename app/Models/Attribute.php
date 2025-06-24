@@ -11,7 +11,7 @@ class Attribute extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'categories', 'values', 'option_type'
+        'title', 'categories', 'values', 'option_type', 'icon'
     ];
 
     public function tags(): HasMany

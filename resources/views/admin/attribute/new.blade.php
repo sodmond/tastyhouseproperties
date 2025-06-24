@@ -66,6 +66,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-3 mb-0">Icon</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="file" name="icon" id="icon">
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-submit-button">
                                 <button class="btn btn-animation ms-auto" type="submit">Submit</button>

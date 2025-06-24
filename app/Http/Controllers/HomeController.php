@@ -35,7 +35,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    { #dd(url('/'));
+    {
         $adverts = Advert::all();
         $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(10)->get();
         $recentProducts = Product::orderByDesc('created_at')->take(20)->get();
