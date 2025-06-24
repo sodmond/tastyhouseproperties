@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="navbar-top">
-                        <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
+                        <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button" style="padding-right:15px;"
                             data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
                             <span class="navbar-toggler-icon navbar-toggler-icon-2">
                                 <i class="fa-solid fa-bars"></i>
