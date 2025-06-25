@@ -48,7 +48,7 @@
                                 <a href="{{ url('/') }}" class="text-content">Home</a>
                             </li>
                             <li>
-                                <a href="{{ route('shop') }}" class="text-content">Shop</a>
+                                <a href="{{ route('shop') }}" class="text-content">Properties</a>
                             </li>
                             <li>
                                 <a href="{{ route('about') }}" class="text-content">About Us</a>

@@ -11,7 +11,7 @@
                             </li>
                             @if($activePage == 'category' || $activePage == 'product')
                                 <li class="breadcrumb-item">
-                                    <a href="{{ route('shop') }}">Shop</a>
+                                    <a href="{{ route('shop') }}">Properties</a>
                                 </li>
                             @endif
                             @if($activePage == 'category')
