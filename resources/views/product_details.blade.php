@@ -160,15 +160,38 @@
                     <div class="col-xl-12 wow fadeInUp">
                         <div class="product-contain">
                             @if(count($product->tags) > 0)
-                                <div class="row">
+                                <div class="row mb-4">
                                     @foreach ($product->tags as $tag)
-                                        <p class="col-4 col-md-4 col-xxl-3 text-center mb-4">
+                                        @if(count(json_decode($tag->value)) <= 1)
+                                        <p class="col-4 col-md-4 col-xxl-3 text-cente mb-4">
                                             @php 
                                                 echo '<img class="mb-2" src="'. asset('storage/attribute/icon/'.$tag->attribute->icon) .'" alt="" style="max-width:30px;"><br>'. 
                                                     implode(', ', json_decode($tag->value));
                                                 echo (in_array($tag->attribute_id, [1, 4]) ? '' : ' '.$tag->attribute->title);
                                             @endphp
                                         </p>
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <div class="row mb-4">
+                                    @foreach ($product->tags as $tag)
+                                        @if(count(json_decode($tag->value)) > 1)
+                                            <div class="col-12 mb-4">
+                                                <div class="row justify-content-cente">
+                                                    <p class="col-auto text-center mb-4">
+                                                        @php 
+                                                            echo '<img class="mb-2" src="'. asset('storage/attribute/icon/'.$tag->attribute->icon) .'" alt="" style="max-width:30px;">';
+                                                        @endphp
+                                                    </p>
+                                                    <p class="col-auto mb-4">
+                                                        <strong>{{ $tag->attribute->title }}: </strong>
+                                                        @php 
+                                                            echo implode(' | ', json_decode($tag->value));
+                                                        @endphp
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             @endif

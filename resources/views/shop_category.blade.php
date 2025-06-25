@@ -4,33 +4,46 @@
 <!-- Categories Section Start -->
 <section class="wow fadeInUp">
     <div class="container-fluid-xs">
-        <div class="row">
-            <?php
-                $catlevelSelection = ($category->level == 1) ? $category->id : $category->parent;
-                $related_cats = \App\Models\ProductCategory::where('parent', $catlevelSelection)->get();
-            ?>
-            @foreach($related_cats as $cat)
-                <div class="col-4 col-md-3 col-xxl-2 mb-3">
-                    <div class="slider-7_ no-space shop-box no-arrow slick-dotted">
-                        <div>
-                            @php 
-                                $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
-                                $catUrl = route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]);
-                            @endphp
-                            <div class="shop-category-box">
-                                <a href="{{ $catUrl }}">
-                                    <div class="shop-category-image">
-                                        <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Categories
+                </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row">
+                        <?php
+                            $catlevelSelection = ($category->level == 1) ? $category->id : $category->parent;
+                            $related_cats = \App\Models\ProductCategory::where('parent', $catlevelSelection)->get();
+                        ?>
+                        @foreach($related_cats as $cat)
+                            <div class="col-4 col-md-3 col-xxl-2 mb-3">
+                                <div class="slider-7_ no-space shop-box no-arrow slick-dotted">
+                                    <div>
+                                        @php 
+                                            $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                                            $catUrl = route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]);
+                                        @endphp
+                                        <div class="shop-category-box">
+                                            <a href="{{ $catUrl }}">
+                                                <div class="shop-category-image">
+                                                    <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
+                                                </div>
+                                                <div class="category-box-name">
+                                                    <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="category-box-name">
-                                        <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-            @endforeach
+                </div>
+            </div>
         </div>
     </div>
 </section>

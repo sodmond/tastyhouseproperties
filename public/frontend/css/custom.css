@@ -1,6 +1,6 @@
 :root {
     --theme-color: #F75709 !important;
-    --theme-color-rgb: 13, 164, 135;
+    --theme-color-rgb: 247, 87, 9;
     --theme-color1: #CC731C !important;
     --theme-color1-rgb: 14, 148, 122;
     --theme-color2: linear-gradient(90.56deg, var(--theme-color1) 8.46%, var(--theme-color) 62.97%);
@@ -449,4 +449,47 @@ header .location-box button .location-arrow {
     #advert-big .banner-contain a {
         max-height: 600px;
     }
+}
+
+.shop-box .shop-category-box a .category-box-name h6 {
+    -webkit-line-clamp: 5 !important;
+    overflow: visible;
+}
+.accordion-button.collapsed {
+    background: var(--theme-color) !important;
+    color: #FFF !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--theme-color) !important;
+    background-color: #FEEEE7 !important;
+    border-color: #FEEEE7 !important;
+}
+
+.accordion-button::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    content:"\f078" !important;
+    color: #FFF !important;
+    background-image:none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    content:"\f077" !important;
+    color: var(--theme-color) !important;
+    background-image:none !important;
+}
+
+.accordion-button:focus {
+    border-color:#FEEEE7 !important;
+    -webkit-box-shadow:0 0 0 .05rem rgba(247,87,9,.25) !important;
+    box-shadow:0 0 0 .05rem rgba(247,87,9,.25) !important;
+}
+
+.accordion-item {
+  border: 1px solid #FEEEE7 !important;
 }
