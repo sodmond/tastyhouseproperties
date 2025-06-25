@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Categories Section Start -->
-<section class="section-b-space wow fadeInUp">
+<section class="wow fadeInUp">
     <div class="container-fluid-xs">
         <div class="row">
             <?php
