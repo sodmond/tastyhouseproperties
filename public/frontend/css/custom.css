@@ -485,6 +485,7 @@ header .location-box button .location-arrow {
 }
 
 .accordion-button:focus {
+    z-index: 0 !important;
     border-color:#FEEEE7 !important;
     -webkit-box-shadow:0 0 0 .05rem rgba(247,87,9,.25) !important;
     box-shadow:0 0 0 .05rem rgba(247,87,9,.25) !important;
