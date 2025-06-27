@@ -184,8 +184,6 @@
                                     </div>
                                     <div class="col mb-4 pt-3" style="border-top:1px solid #dcdcdc;">
                                         <span class="fs-5" style="float:left;">Product Image</span>
-                                        <button type="button" class="btn btn-sm theme-bg-color text-white" style="float:right;" id="add_more_image_btn">
-                                            Add More Image</button>
                                     </div>
                                     <div class="col-md-12 mb-4">
                                         <div id="product_image_section">
@@ -207,6 +205,8 @@
                                             @endforeach
                                         </div>
                                         <small class="text-primary">Allowed images; .jpg, .png, .jpeg | Max: 1MB | Min-Width: 370px (Square Dimension)</small>
+                                        <button type="button" class="btn btn-sm theme-bg-color text-white" style="float:right;" id="add_more_image_btn">
+                                            Add More Image</button>
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-sm theme-bg-color text-white">Submit</button>
@@ -267,7 +267,7 @@
                 });
             });
             
-            let max_fields = 5; 
+            let max_fields = 10; 
             let wrapper = $('#product_image_section');
             let add_btn = $('#add_more_image_btn');
             let x = $('#product_image_section').children().length;

@@ -11,23 +11,23 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="contact-title">
-                                <h3>Advertise With Us at Tastyhouse Stores!</h3>
+                                <h3>Advertise With Us at Tastyhouse Properties!</h3>
                             </div>
 
                             <div>
-                                <p>At Tastyhouse Stores, we offer a unique opportunity for brands to reach a diverse and engaged audience through targeted advertising. Whether you're looking to promote a product, service, or special offer, we have various ad placement options tailored to fit your brand’s needs.</p>
+                                <p>At Tastyhouse Properties, we offer a unique opportunity for brands to reach a diverse and engaged audience through targeted advertising. Whether you're looking to promote a product, service, or special offer, we have various ad placement options tailored to fit your brand’s needs.</p>
                                 <h4 class="my-4 fw-bold">Why Advertise With Us?</h4>
                                 <ul class="th-list">
-                                    <li><strong>Reach a Targeted Audience:</strong> Our marketplace attracts a wide range of shoppers who are already looking for quality products, giving you direct access to potential customers who are actively engaged and ready to purchase.</li>
-                                    <li><strong>Flexible Ad Spots:</strong> We offer a variety of ad placement options, including banner ads, featured product listings, email marketing, and social media shoutouts. You can choose the best fit for your brand's goals.</li>
+                                    <li><strong>Reach a Targeted Audience:</strong> Our marketplace attracts a wide range of customers who are looking for quality products and services, giving you direct access to potential customers who are actively engaged and ready to purchase. </li>
+                                    <li><strong>Flexible Ad Spots:</strong> We offer a variety of ad placement options, including banner ads, featured product and services listings, email marketing, and social media shoutouts. You can choose the best fit for your brand's goals. </li>
                                     <li><strong>Affordable and Effective:</strong> With our zero-commission model and affordable advertising rates, your brand gets the maximum exposure without breaking the bank.</li>
-                                    <li><strong>Engage with a Community:</strong> Tastyhouse Stores is built on trust, and our customers trust the brands we feature. By advertising with us, you're aligning with a platform that values authenticity and customer satisfaction.</li>
+                                    <li><strong>Engage with a Community:</strong> Tastyhouse Properties is built on trust, and our customers trust the brands we feature. By advertising with us, you're aligning with a platform that values authenticity and customer satisfaction.</li>
                                 </ul>
                             </div>
 
                             <div>
                                 <h4 class="my-4 fw-bold">How to Get Started</h4>
-                                <p>It's simple to start advertising with us! Just fill out the form below, and our team will get in touch with you to discuss the best advertising options for your brand. Whether you're looking for a one-time campaign or ongoing exposure, we’ve got the perfect solution for you.</p>
+                                <p>It's simple to start advertising with us! Just fill out the form below, and our team will get in touch with you to discuss the best advertising options for your brand. Whether you're looking for a one-time campaign or ongoing exposure, we’ve got the perfect solution for you.</p>
                             </div>
                         </div>
                     </div>

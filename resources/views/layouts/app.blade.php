@@ -251,9 +251,9 @@
         });
         $('#price-filter-range').ionRangeSlider({
             type: "double",
-            min: 0,
-            max: 100000000,
-            from: 5000,
+            min: {{ $th_min_price }},
+            max: {{ $th_max_price }},
+            from: {{ $th_min_price }},
             step: 50000,
             prefix: '{{$currency}} ',
             prettify_enabled: true,

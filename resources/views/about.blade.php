@@ -32,18 +32,18 @@
                     <div>
                         <div class="review-title">
                             <h4>About Us</h4>
-                            <h2>Welcome To Tasty House Stores And Services Ltd COMPANY REGISTRATION NO. 8297143</h2>
-                            <h3 class="mb-4">The Marketplace Built For Catering Club, Multi-Vendors and Services. Designed For Success.</h3>
+                            <h2>Welcome To Tasty House Store And Services Ltd COMPANY REGISTRATION NO. 8297143</h2>
+                            <h3 class="mb-4">The Marketplace Built For Catering Club, Multi-Vendors, Property Listing And Various  Services. Designed For Success.</h3>
                         </div>
 
                         <div class="delivery-list">
-                            <p class="text-content">We believe that selling online should be simple, fair, and rewarding. 
-                                That's why we created Tastyhouse Stores, a dynamic e-commerce platform where vendors can connect 
-                                with customers effortlessly-without the burden of commission fees. Yes, you read that right! With 
-                                our zero-commission model, sellers keep 100% of their earning, allowing them to focus on growth and 
+                            <p class="text-content">We believe that selling online should be simple, fair, and rewarding. That's why 
+                                we created Tastyhouse Properties, a dynamic e-commerce platform where vendors can connect with 
+                                customers effortlessly-without the burden of commission fees. Yes, you read that right! With our 
+                                zero-commission model, sellers keep 100% of their earnings, allowing them to focus on growth and 
                                 innovation.</p>
-                            <p class="text-content">Whether you're an entrepreneur launching a new brand or an established business 
-                                looking for a wider audience, Tastyhouse Stores gives you the tools and visibility you need to succeed.
+                            <p class="text-content">Whether you're an Estate Agent, a Developer or a homeowner looking for a wider 
+                                audience, Tastyhouse Properties gives you the tools and visibility you need to succeed.
                             </p>
                         </div>
                     </div>
@@ -131,12 +131,12 @@
                     <h2 class="center">Mission Statement</h2>
                 </div>
                 <p class="fs-6 text-center" style="line-height:26px;">
-                    At Tasty House Stores, our mission is to empower vendors by providing a dynamic, user-friendly 
-                    marketplace that connects businesses with customers seamlessly-all with a zero-commission model 
-                    that ensures sellers keep 100% of their earnings. We strive to create a thriving digital 
-                    ecosystem where entrepreneurs can grow, innovate, and succeed. By prioritizing quality, 
-                    convenience, and customer satisfaction, we aim to redefine the online shopping experience for 
-                    both buyers and vendors.</p>
+                    At Tastyhouse Properties, our mission is to empower vendors by providing a dynamic, user-friendly 
+                    marketplace that connects businesses with customers seamlessly with a zero-commission model that 
+                    ensures sellers keep 100% of their earnings. We strive to create a thriving digital ecosystem where 
+                    entrepreneurs can grow, innovate, and succeed. By prioritizing quality, convenience, and customer 
+                    satisfaction, we aim to redefine the online shopping experience for both buyers and vendors.
+                </p>
             </div>
             <div class="col-md-6 p-4">
                 <div class="about-us-title text-center">
@@ -146,9 +146,21 @@
                 <p class="fs-6 text-center" style="line-height:26px;">
                     To be the leading online marketplace where businesses thrive without barriers-offering a zero-commission 
                     platform that empowers vendors, fosters innovation, and enhances the shopping experience. Tastyhouse 
-                    Stores envisions a future where entrepreneurs have full control over their success, customers enjoy 
-                    seamless access to quality products, and digital commerce is more inclusive, efficient, and rewarding 
-                    for all.
+                    Properties envisions a future where entrepreneurs have full control over their success, customers enjoy 
+                    seamless access to quality products and services, and digital commerce is more inclusive, efficient, and 
+                    rewarding for all.
+                </p>
+            </div>
+            <div class="col-md-12 p-4">
+                <div class="about-us-title text-center">
+                    <h4 class="text-content">Our</h4>
+                    <h2 class="center">Departments</h2>
+                </div>
+                <p class="fs-6 text-center" style="line-height:26px;">
+                    We believe that selling and buying online should be simple, fair, and rewarding.
+                    Visit our other departments for products and services at 
+                    <a href="http://tastyhouseclub.com">www.tastyhouseclub.com</a> 
+                    and <a href="http://tastyhousestores.com">www.tastyhousestores.com</a>.
                 </p>
             </div>
         </div>

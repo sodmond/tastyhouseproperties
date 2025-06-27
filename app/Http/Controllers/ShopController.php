@@ -18,6 +18,15 @@ use Illuminate\Support\Facades\Mail;
 
 class ShopController extends Controller
 {
+    public $minPrice;
+    public $maxPrice;
+
+    public function __construct() {
+        $products = Product::all();
+        $this->minPrice = $products->min('price'); #dd($this->minPrice);
+        $this->maxPrice = $products->max('price'); #dd($this->maxPrice);
+    }
+
     public function index()
     {
         $cookieName = getLocationCookie();
@@ -42,8 +51,8 @@ class ShopController extends Controller
                 $orderField = 'price';
             }
         }
-        $minPrice = 0;
-        $maxPrice = 1000000000;
+        $minPrice = $this->minPrice;
+        $maxPrice = $this->maxPrice;
         if (isset($_GET['price_range'])) {
             $price_range = explode(';', $_GET['price_range']);
             $minPrice = $price_range[0] ?? 0;
@@ -118,8 +127,8 @@ class ShopController extends Controller
                 $orderField = 'price';
             }
         }
-        $minPrice = 0;
-        $maxPrice = 100000000;
+        $minPrice = $this->minPrice;
+        $maxPrice = $this->maxPrice;
         if (isset($_GET['price_range'])) {
             $price_range = explode(';', $_GET['price_range']);
             $minPrice = $price_range[0] ?? 0;
@@ -213,8 +222,8 @@ class ShopController extends Controller
                 $orderField = 'price';
             }
         }
-        $minPrice = 0;
-        $maxPrice = 100000000;
+        $minPrice = $this->minPrice;
+        $maxPrice = $this->maxPrice;
         if (isset($_GET['price_range'])) {
             $price_range = explode(';', $_GET['price_range']);
             $minPrice = $price_range[0] ?? 0;

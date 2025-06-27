@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\State;
 use App\Models\Wishlist;
@@ -51,7 +52,10 @@ class AppServiceProvider extends ServiceProvider
                     }
                 }
             }
-            View::share(compact('th_categories1', 'currency', 'th_states', 'th_location_name'));
+            $th_products = Product::all();
+            $th_min_price = $th_products->min('price');
+            $th_max_price = $th_products->max('price');
+            View::share(compact('th_categories1', 'currency', 'th_states', 'th_location_name', 'th_min_price', 'th_max_price'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
