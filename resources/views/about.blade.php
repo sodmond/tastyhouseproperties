@@ -159,8 +159,8 @@
                 <p class="fs-6 text-center" style="line-height:26px;">
                     We believe that selling and buying online should be simple, fair, and rewarding.
                     Visit our other departments for products and services at 
-                    <a href="http://tastyhouseclub.com" target="_blank">www.tastyhouseclub.com</a> 
-                    and <a href="http://tastyhousestores.com" target="_blank">www.tastyhousestores.com</a>.
+                    <a href="https://tastyhouseclub.com" target="_blank">www.tastyhouseclub.com</a> 
+                    and <a href="https://tastyhousestores.com" target="_blank">www.tastyhousestores.com</a>.
                 </p>
             </div>
         </div>
