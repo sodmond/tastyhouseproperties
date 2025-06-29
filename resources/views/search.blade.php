@@ -29,7 +29,7 @@
 
 @if(!isset($products))
 <section class="search-section mb-4">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row mb-4">
             <div class="col-12 text-center mb-4">
                 <em class="fs-4">No result found!</em>
@@ -39,7 +39,7 @@
 </section>
 @else
 <section class="section-b-space shop-section">
-    <div class="container-fluid-lg">
+    <div class="container-fluid-xs">
         <div class="row">
             <div class="col-12">
                 <div class="show-button">
