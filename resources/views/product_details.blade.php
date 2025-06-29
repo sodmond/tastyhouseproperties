@@ -211,7 +211,7 @@
                                 <div class="tab-pane fade show active" id="description" role="tabpanel">
                                     <div class="product-description">
                                         <div class="nav-desh">
-                                            <p>{{ $product->description }}</p>
+                                            <p><?php echo nl2br($product->description) ?></p>
                                         </div>
                                     </div>
                                 </div>
