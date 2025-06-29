@@ -23,7 +23,7 @@
             <div class="col-xxl-9 col-xl-8 col-lg-7 wow fadeInUp">
                 <div class="row g-4">
                     <div class="col-xl-6">
-                        <div class="product-left-box">
+                        <div class="product-left-box p-2">
                             <div class="row g-sm-4 g-2">
                                 <div class="col-xxl-10 col-lg-12 col-md-10 order-xxl-2 order-lg-1 order-md-2">
                                     <div class="product-main-2 no-arrow">

@@ -67,7 +67,7 @@
 <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
     @foreach($primeProducts as $product)
         <div>
-            <div class="product-box-3 h-100 wow fadeInUp">
+            <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                 @if($product->prime_status == 1)
                     <span class="product-badge">Prime</span>
                 @endif
@@ -275,7 +275,7 @@
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
         @foreach($recentProducts as $product)
             <div>
-                <div class="product-box-3 h-100 wow fadeInUp">
+                <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
                         <span class="product-badge">Prime</span>
                     @endif

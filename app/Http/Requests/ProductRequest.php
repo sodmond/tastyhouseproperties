@@ -31,7 +31,7 @@ class ProductRequest extends FormRequest
             'price'             => ['nullable', 'numeric'],
             'description'       => ['nullable', 'string', 'max:2000'],
             'city'              => ['required', 'integer', 'exists:cities,id'],
-            'image'             => ['required_if_accepted:new', 'array', 'min:1', 'max:5'],
+            'image'             => ['required_if_accepted:new', 'array', 'min:1', 'max:10'],
             'image.*'           => ['required_if_accepted:new', 'image', 'mimes:jpg,png,jpeg', 'max:1024', Rule::dimensions()->minHeight(370)->minWidth(370)],
             'property_size'     => ['nullable', 'string', 'max:255'],
             'rent_type'         => ['nullable', 'string', 'max:7'],

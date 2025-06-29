@@ -278,6 +278,10 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
     .dashboard-title.dashboard-flex button {
         display: inline-block !important;
     }
+    .product-box-3-home .product-header .product-image {
+        max-height: 250px !important;
+        overflow: hidden !important;
+    }
 }
 
 #mobile-location-box {
