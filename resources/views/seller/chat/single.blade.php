@@ -26,7 +26,11 @@
                                 <button class="btn btn-sm theme-bg-color"><a class="text-white" href="{{ route('seller.messages') }}"><i class="fa fa-arrow-left"></i>  Back</a></button>
                             </div>
                             <div class="theme-color fw-bold fs-6" style="margin-bottom:15px">
-                                <a href="javascript:void(0)" style="display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                                <?php 
+                                    $product = \App\Models\Product::find(json_decode($chat->order->product_id)[0]);
+                                    $productUrl = isset($product->id) ? route('product', ['slug' => $product->slug]) : route('shop');
+                                ?>
+                                <a href="{{ $productUrl }}" target="_blank" style="display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
                                     ORDER #{{ $chat->order->code }}</a>
                             </div>
                             <div id="th-chatbox">
