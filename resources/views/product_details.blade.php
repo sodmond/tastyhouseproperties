@@ -273,15 +273,19 @@
                                 </li>
 
                                 <?php $subscription = \App\Models\Subscription::where('seller_id', $product->seller_id)->where('type', 'general')->latest()->first(); ?>
-                                @if($subscription->end_date > date('Y-m-d'))
-                                <li>
-                                    <div class="address-contact">
-                                        <i data-feather="headphones"></i>
-                                        <h5>Contact Seller: <span class="text-content" style="cursor: pointer;" onclick="window.location.href='tel:+234{{ $product->seller->phone }}'">
-                                            +234{{ $product->seller->phone }}</span></h5>
-                                    </div>
-                                </li>
-                                @endif
+                                @isset($subscription->end_date)
+                                    @if($subscription->end_date != '')
+                                        @if($subscription->end_date > date('Y-m-d'))
+                                            <li>
+                                                <div class="address-contact">
+                                                    <i data-feather="headphones"></i>
+                                                    <h5>Contact Seller: <span class="text-content" style="cursor: pointer;" onclick="window.location.href='tel:+234{{ $product->seller->phone }}'">
+                                                        +234{{ $product->seller->phone }}</span></h5>
+                                                </div>
+                                            </li>
+                                        @endif
+                                    @endif
+                                @endisset
                                 <li style="width: 100%;">
                                     <div class="">
                                         <form action="{{ route('user.messages.initiate') }}" method="post">

@@ -43,9 +43,13 @@
                                     <i class="fa fa-phone theme-color mb-4"></i> 
                                     <strong>Contact:</strong> 
                                     <?php $subscription = \App\Models\Subscription::where('seller_id', $seller->id)->where('type', 'general')->latest()->first(); ?>
-                                    @if($subscription->end_date > date('Y-m-d'))
-                                        <span class="text-content">+234{{ $seller->phone }}</span>
-                                    @endif
+                                    @isset($subscription->end_date)
+                                        @if($subscription->end_date != '')
+                                            @if($subscription->end_date > date('Y-m-d'))
+                                                <span class="text-content">+234{{ $seller->phone }}</span>
+                                            @endif
+                                        @endif
+                                    @endisset
                                 </h5>
                             </div>
 

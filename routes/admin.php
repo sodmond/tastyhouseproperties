@@ -91,7 +91,7 @@ Route::group(['middleware' => ['auth:admin', 'change.admindomain']], function ()
     Route::get('account/password', [AdminBackend\ProfileController::class, 'password'])->name('profile.password');
     Route::put('account/password', [AdminBackend\ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
     
-    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function() {
+    Route::group(['prefix' => 'settings', 'as' => 'settings.', 'middleware' => ['admin.super']], function() {
         Route::get('/', [AdminBackend\SettingsController::class, 'index'])->name('home');
         Route::get('admin-details/{id}', [AdminBackend\SettingsController::class, 'viewAdmin'])->name('admin.get');
         Route::post('new-admin', [AdminBackend\SettingsController::class, 'newAdmin'])->name('admin.new');

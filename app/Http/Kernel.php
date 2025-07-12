@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'seller.subcheck' => \App\Http\Middleware\VendorSubscription::class,
         'seller.type' => \App\Http\Middleware\SellerType::class,
         'change.admindomain' => \App\Http\Middleware\ChangeAdminDomain::class,
+        'admin.super' => \App\Http\Middleware\CheckSuperAdmin::class,
     ];
 }

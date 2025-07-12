@@ -61,7 +61,10 @@
                                         <select class="form-control" name="role" id="role" required>
                                             <option value="">- - - Select - - -</option>
                                             @foreach($adminRoles as $role)
+                                                @if(auth('admin')->id() != 1 && $role->id == 1)
+                                                @else
                                                 <option value="{{ $role->id }}" @selected(old('role') == $role->id)>{{ ucwords($role->title) }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
@@ -143,7 +146,11 @@
                                         <select class="form-control" name="role" id="role" required>
                                             <option value="">- - - Select - - -</option>
                                             @foreach($adminRoles as $role)
+                                                @if(auth('admin')->id() != 1 && $role->id == 1)
+                                                &nbsp;
+                                                @else
                                                 <option value="{{ $role->id }}" @selected($admin->role == $role->id)>{{ ucwords($role->title) }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>

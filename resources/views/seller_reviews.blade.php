@@ -41,7 +41,14 @@
                                         {{ $seller->cityy->name.', '.$seller->sate->name }}
                                     @endif
                                 </span></h5>
-                                <h5><i class="fa fa-phone theme-color mb-4"></i> <strong>Contact:</strong> <span class="text-content">+234{{ $seller->phone }}</span></h5>
+                                <?php $subscription = \App\Models\Subscription::where('seller_id', $product->seller_id)->where('type', 'general')->latest()->first(); ?>
+                                @isset($subscription->end_date)
+                                    @if($subscription->end_date != '')
+                                        @if($subscription->end_date > date('Y-m-d'))
+                                            <h5><i class="fa fa-phone theme-color mb-4"></i> <strong>Contact:</strong> <span class="text-content">+234{{ $seller->phone }}</span></h5>
+                                        @endif
+                                    @endif
+                                @endisset
                             </div>
 
                             <div class="vendor-share">

@@ -44,6 +44,19 @@
                     </div>
 
                     <div class="table-responsive table-product">
+                        @if (count($errors))
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> Error validating data.<br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert"><strong>Success!</strong> {{ session('success') }}</div>
+                        @endif
                         <table class="table all-package theme-table" >
                             <thead>
                                 <tr>
@@ -68,17 +81,20 @@
                                     <td>{{ $admin->email }}</td>
                                     <td>
                                         <ul>
-                                            <li>
-                                                <a href="{{ route('admin.settings.admin.get', ['id' => $admin->id]) }}">
-                                                    <i class="ri-pencil-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModalToggle">
-                                                    <i class="ri-delete-bin-line"></i>
-                                                </a>
-                                            </li>
+                                            @if($admin->id != 1 && auth('admin')->user()->role != 2 && $admin->id != auth('admin')->id())
+                                                <li>
+                                                    <a href="{{ route('admin.settings.admin.get', ['id' => $admin->id]) }}">
+                                                        <i class="ri-pencil-line"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <input type="hidden" id="{{'adminName'.$admin->id}}" value="{{$admin->firstname.' '.$admin->lastname}}">
+                                                    <input type="hidden" id="{{'deleteAdminUrl'.$admin->id}}" value="{{ route('admin.settings.admin.trash', ['id' => $admin->id]) }}">
+                                                    <a href="javascript:void(0)" id="{{'deleteAdminBtn-'.$admin->id}}">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                    </a>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </td>
                                 </tr>
@@ -92,3 +108,18 @@
     </div>
 </div>
 @endsection
+
+@push('custom-scripts')
+<script>
+    $('a[id^="deleteAdminBtn"]').click(function() {
+        var getBtnId = $(this).attr('id');
+        var adminId = getBtnId.split("-")[1];
+        var name = $("#adminName"+adminId).val();
+        var x = confirm('Do you want to delete this Admin ('+name+')? This process cannot be reversed');
+        if (x == true) {
+            var url = $('#deleteAdminUrl'+adminId).val();
+            window.location.href = url;
+        }
+    });
+</script>
+@endpush
