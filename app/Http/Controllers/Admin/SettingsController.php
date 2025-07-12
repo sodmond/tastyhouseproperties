@@ -37,6 +37,9 @@ class SettingsController extends Controller
             return view('admin.settings.admin_details', compact('adminRoles'));
         }
         $admin = Admin::find($id);
+        if ($admin->role == 1 && auth('admin')->id() != 1) {
+            return back()->withErrors(['err_msg' => 'You do not have permisssion']);
+        }
         return view('admin.settings.admin_details', compact('admin', 'adminRoles'));
     }
 
