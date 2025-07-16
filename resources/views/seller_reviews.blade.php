@@ -41,6 +41,7 @@
                                         {{ $seller->cityy->name.', '.$seller->sate->name }}
                                     @endif
                                 </span></h5>
+                                <?php $subscription = \App\Models\Subscription::where('seller_id', $product->seller_id)->where('type', 'general')->latest()->first(); ?>
                                 @isset($subscription->end_date)
                                     @if($subscription->end_date != '')
                                         @if($subscription->end_date > date('Y-m-d'))
