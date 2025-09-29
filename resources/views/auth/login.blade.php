@@ -1,5 +1,5 @@
 <?php $layout = ($_SERVER['SERVER_NAME'] == config('app.domain2')) ? 'thc.layouts.app' : 'layouts.app' ?>
-@extends($layout, ['title' => 'User Login', 'activePage' => 'login'])
+@extends($layout, ['title' => 'Buyer Login', 'activePage' => 'login'])
 
 @section('content')
 <section class="log-in-section background-image-2 section-b-space">

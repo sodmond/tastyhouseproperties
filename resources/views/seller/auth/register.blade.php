@@ -40,8 +40,8 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating">
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{ old('lastname') }}">
-                                    <label for="lastname">Lastname</label>
+                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Surname" value="{{ old('lastname') }}">
+                                    <label for="lastname">Surname</label>
                                 </div>
                             </div>
                             <div class="col-12">

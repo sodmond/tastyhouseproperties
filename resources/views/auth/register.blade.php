@@ -1,5 +1,5 @@
 <?php $layout = ($_SERVER['SERVER_NAME'] == config('app.domain2')) ? 'thc.layouts.app' : 'layouts.app' ?>
-@extends($layout, ['title' => 'User Registration', 'activePage' => 'register'])
+@extends($layout, ['title' => 'Buyer Registration', 'activePage' => 'register'])
 
 @section('content')
 <section class="log-in-section section-b-space">
@@ -41,8 +41,8 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating">
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{ old('lastname') }}">
-                                    <label for="lastname">Lastname</label>
+                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Surname" value="{{ old('lastname') }}">
+                                    <label for="lastname">Surname</label>
                                 </div>
                             </div>
                             <div class="col-12">

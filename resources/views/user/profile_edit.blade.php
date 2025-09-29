@@ -80,8 +80,8 @@
                                     </div>
                                     <div class="col-md-12 mb-4">
                                         <div class="form-floating theme-form-floating">
-                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{ auth('web')->user()->lastname }}" required>
-                                            <label for="lastname">Last Name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Surname" value="{{ auth('web')->user()->lastname }}" required>
+                                            <label for="lastname">Surname</label>
                                         </div>
                                     </div>
                                     <div class="col-md-12 mb-4">

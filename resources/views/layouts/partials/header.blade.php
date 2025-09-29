@@ -103,7 +103,7 @@
                                             @auth('web')
                                                 <li class="product-box-contain">
                                                     <i></i>
-                                                    <a href="{{ route('user.home') }}">User Dashboard</a>
+                                                    <a href="{{ route('user.home') }}">Buyer Dashboard</a>
                                                 </li>
 
                                                 <li class="product-box-contain" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -117,11 +117,11 @@
                                             @guest('web')
                                                 <li class="product-box-contain">
                                                     <i></i>
-                                                    <a href="{{ route('login') }}">User Login</a>
+                                                    <a href="{{ route('login') }}">Buyer Login</a>
                                                 </li>
 
                                                 <li class="product-box-contain">
-                                                    <a href="{{ route('register') }}">User Register</a>
+                                                    <a href="{{ route('register') }}">Buyer Register</a>
                                                 </li>
                                             @endguest
                                         </ul>

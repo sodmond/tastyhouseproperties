@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'User Dashboard', 'activePage' => 'user.home'])
+@extends('layouts.app', ['title' => 'Buyer Dashboard', 'activePage' => 'user.home'])
 
 @section('content')
 <section class="user-dashboard-section section-b-space">

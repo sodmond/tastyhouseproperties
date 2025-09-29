@@ -77,7 +77,7 @@
                                     <h5>{{ auth('seller')->user()->firstname }}</h5>
                                 </li>
                                 <li>
-                                    <h5 class="fw-bold">Last Name :</h5>
+                                    <h5 class="fw-bold">Surname :</h5>
                                     <h5>{{ auth('seller')->user()->lastname }}</h5>
                                 </li>
                                 <li>

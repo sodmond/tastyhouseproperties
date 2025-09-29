@@ -95,8 +95,8 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-floating theme-form-floating">
-                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{ auth('seller')->user()->lastname }}" required>
-                                            <label for="lastname">Last Name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Surname" value="{{ auth('seller')->user()->lastname }}" required>
+                                            <label for="lastname">Surname</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">

@@ -33,7 +33,7 @@
                                     <h5>{{ auth('web')->user()->firstname }}</h5>
                                 </li>
                                 <li>
-                                    <h5 class="fw-bold">Last Name :</h5>
+                                    <h5 class="fw-bold">Surname :</h5>
                                     <h5>{{ auth('web')->user()->lastname }}</h5>
                                 </li>
                                 <li>
