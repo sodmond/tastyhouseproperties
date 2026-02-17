@@ -55,7 +55,7 @@ Route::get('/become-a-vendor', [App\Http\Controllers\VendorController::class, 'a
 Route::get('/vendor-details', [App\Http\Controllers\VendorController::class, 'view'])->name('seller.details');
 Route::get('/vendor-reviews', [App\Http\Controllers\VendorController::class, 'reviews'])->name('vendor.reviews');
 
-Route::group(['middleware' => ['auth:web', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
+Route::group(['middleware' => ['auth:web'/*, 'verified'*/], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('home', [FrontendController\HomeController::class, 'index'])->name('home');
     
     Route::get('wishlist', [FrontendController\WishlistController::class, 'index'])->name('wishlist');

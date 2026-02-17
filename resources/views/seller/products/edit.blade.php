@@ -204,7 +204,7 @@
                                             </div>
                                             @endforeach
                                         </div>
-                                        <small class="text-primary">Allowed images; .jpg, .png, .jpeg | Max: 1MB | Min-Width: 370px (Square Dimension)</small>
+                                        <small class="text-primary">Allowed images; .jpg, .png, .jpeg | Max: 10MB | Min-Width: 370px (Square Dimension)</small>
                                         <button type="button" class="btn btn-sm theme-bg-color text-white" style="float:right;" id="add_more_image_btn">
                                             Add More Image</button>
                                     </div>

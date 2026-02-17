@@ -17,6 +17,7 @@ function getSubCategories(cat_url, level) {
 
 /* Header Location Filter Starts */
 $('#back-to-states').hide();
+const main_location_states = $('.location-select').html();
 $('#location-search').on('input', function(){
     var userInput = $(this).val().toLowerCase();
     $('.location-select li').each(function(){
@@ -57,12 +58,16 @@ $('.location-select').on('click', 'li a', function (e) {
                 //console.log(result);
                 $('.location-select').html(result);
                 $('#back-to-states').show('slow');
+                $('#location-search').val('');
+                $('#location-search').attr('placeholder', 'Search Your City');
             }
         }
     });
 });
 $('#back-to-states').click(function() {
-    $('.location-select').html($('#main_location_states').html());
+    $('.location-select').html(main_location_states);
+    $('#location-search').val('');
+    $('#location-search').attr('placeholder', 'Search Your State');
     $(this).hide('slow');
 });
 /* Header Location Filter Ends */

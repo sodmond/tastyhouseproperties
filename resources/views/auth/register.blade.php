@@ -79,7 +79,9 @@
                                         <input class="checkbox_animated check-box" type="checkbox"
                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">I agree with
-                                            <span>Terms</span> and <span>Privacy</span></label>
+                                            <a href="{{ route('tandc') }}" target="_blank">Terms</a> and 
+                                            <a href="{{ route('privacypolicy') }}" target="_blank">Privacy</a>
+                                        </label>
                                     </div>
                                 </div>
                             </div>

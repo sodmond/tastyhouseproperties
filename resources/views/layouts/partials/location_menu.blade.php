@@ -15,7 +15,7 @@
                         {{ $th_location_name }}
                     </div>
                     <div class="search-input">
-                        <input type="search" class="form-control" id="location-search" placeholder="Search Your Area">
+                        <input type="search" class="form-control" id="location-search" placeholder="Search Your State">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 

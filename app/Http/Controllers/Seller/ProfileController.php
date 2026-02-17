@@ -56,7 +56,7 @@ class ProfileController extends Controller
     public function updateImage(Request $request)
     {
         $this->validate($request, [
-            'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:1024', Rule::dimensions()->minWidth(300)->minHeight(300)]
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:10240', Rule::dimensions()->minWidth(300)->minHeight(300)]
         ],[
             'image.dimensions' => 'The image is too small, you need to upload a bigger image',
         ]); #dd($request->all());
@@ -66,7 +66,11 @@ class ProfileController extends Controller
         $imgName = time() . '.' . $request->file('image')->extension();
         #$request->file('image')->storeAs("seller/profile_pix", $imgName, 'public');
         $thumbnail = ImageManager::gd()->read($request->file('image')->path());
-        $thumbnail->cover(300, 300, 'center')->save(storage_path('/app/public/seller/profile_pix/'. $imgName));
+        $newSize = 500;
+        if ($thumbnail->width() < 500 || $thumbnail->height() < 500) {
+            $newSize = ($thumbnail->width() > $thumbnail->height()) ? $thumbnail->height() : $thumbnail->width();
+        }
+        $thumbnail->cover($newSize, $newSize, 'center')->save(storage_path('/app/public/seller/profile_pix/'. $imgName));
         Seller::where('id', auth('seller')->id())->update(['image' => $imgName]);
         return back()->with('success', 'Profile picture successfully updated.');
     }

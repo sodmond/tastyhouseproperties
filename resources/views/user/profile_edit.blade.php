@@ -53,7 +53,7 @@
                                                 <div class="form-floating theme-form-floating mb-4">
                                                     <input type="file" class="form-control" id="image" name="image" placeholder="First Name">
                                                     <label for="image">Select Image</label>
-                                                    <small class="text-primary">Allowed images; .jpg, .png, .jpeg | Max: 1MB | Min Width/Height: 300px</small>
+                                                    <small class="text-primary">Allowed images; .jpg, .png, .jpeg | Max: 10MB | Min Width/Height: 300px</small>
                                                 </div>
                                                 <button type="submit" class="btn btn-sm theme-bg-color text-white">Update</button>
                                             </div>
