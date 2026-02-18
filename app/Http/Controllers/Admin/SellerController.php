@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\SellersExport;
 use App\Http\Controllers\Controller;
+use App\Mail\AccountStatus;
 use App\Mail\ApprovalStatus;
 use App\Models\Order;
 use App\Models\Product;
@@ -100,11 +101,15 @@ class SellerController extends Controller
         if ($seller) {
             if ($seller->status == true) {
                 $seller->status = false;
+                Product::where('seller_id', $seller->id)->delete();
                 $seller->save();
+                Mail::to($seller->email)->send(new AccountStatus($seller->firstname, false));
                 return back()->withErrors(['err_msg' => 'Vendor has been banned']);
             }
             $seller->status = true;
+            Product::where('seller_id', $seller->id)->restore();
             $seller->save();
+            Mail::to($seller->email)->send(new AccountStatus($seller->firstname, true));
             return back()->with('success', 'Vendor ban has been lifted');
         }
         return redirect()->route('admin.home');
