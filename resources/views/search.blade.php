@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xxl-6 col-xl-8 mx-auto">
                 <div class="title d-block text-center">
-                    <h2>Search for products</h2>
+                    <h2>Search Property</h2>
                     <span class="title-leaf">
                         &nbsp;
                     </span>
