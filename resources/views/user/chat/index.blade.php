@@ -34,15 +34,21 @@
                                             <img src="{{ $profilepix }}" class="blur-up lazyload img-thumbnail" alt="" style="border-radius:100px; max-width:50px;">
                                         </td>
                                         <td style="text-align:left; max-width: 200px;">
-                                            <h6 class="theme-color fw-bold mb-2">{{ $chat->seller->companyname ?? $chat->seller->firstname }}</h6>
+                                            <div style="display:flex; justify-content:space-between;">
+                                                <h6 class="theme-color fw-bold mb-2">{{ $chat->seller->companyname ?? $chat->seller->firstname }}</h6>
+                                                @if ($chat->user_read_status == 0)
+                                                    <small style="background:#F75709; color:#FFF;" class="px-2 py-2 rounded-pill">unread</small>
+                                                @endif
+                                            </div>
                                             <h6 class="ellipsis">{{ $chat->chatlog[$msgCount-1]->message }}</h6>
+                                            <div class="text-end small">{{ $chat->chatlog[$msgCount-1]->created_at }}</div>
                                         </td>
-                                        <td style="vertical-align: middle;">
+                                        {{--<td style="vertical-align: middle;">
                                             @if ($chat->user_read_status == 0)
                                                 <div class="mb-2"><small style="background:#F75709; color:#FFF;" class="px-2 py-2 rounded-pill">unread</small></div>
                                             @endif
                                             <div class="small">{{ $chat->chatlog[$msgCount-1]->created_at }}</div>
-                                        </td>
+                                        </td>--}}
                                     </tr>
                                     @endforeach
                                 </tbody>
