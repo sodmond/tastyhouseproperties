@@ -24,7 +24,7 @@ class RegisterController extends Controller
             'firstname' => ['required', 'max:255'],
             'lastname' => ['required', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:sellers'],
-            'phone' => ['required', 'numeric', 'unique:sellers'],
+            'phone' => ['nullable', 'numeric'],
             'password' => ['required', 'confirmed', 'min:8'],
             'g-recaptcha-response' => 'recaptcha',
         ],[

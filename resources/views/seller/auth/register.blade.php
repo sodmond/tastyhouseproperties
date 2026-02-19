@@ -54,7 +54,7 @@
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating">
                                     <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone Number" value="{{ old('phone') }}">
-                                    <label for="phone">Phone Number</label>
+                                    <label for="phone">Phone Number (Optional)</label>
                                 </div>
                             </div>
 

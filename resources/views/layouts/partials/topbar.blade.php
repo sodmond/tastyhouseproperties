@@ -2,9 +2,10 @@
     <div class="container-fluid-lg">
         <div class="row">
             <div class="col-xxl-3 col-lg-3 col-7 d-xxl-block">
-                <div class="top-left-header">
+                <div class="top-left-header location-button" style="cursor:pointer;">
                     <i class="iconly-Location icli text-white"></i>
                     <span class="text-white">{{ $th_location_name }}</span>
+                    <small class="text-white mt-1 px-1"><i class="fa fa-angle-down"></i></small>
                 </div>
             </div>
 

@@ -104,7 +104,7 @@ class SellerController extends Controller
                 Product::where('seller_id', $seller->id)->delete();
                 $seller->save();
                 Mail::to($seller->email)->send(new AccountStatus($seller->firstname, false));
-                return back()->withErrors(['err_msg' => 'Vendor has been banned']);
+                return back()->with('success', 'Vendor has been banned');
             }
             $seller->status = true;
             Product::where('seller_id', $seller->id)->restore();

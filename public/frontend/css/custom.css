@@ -266,7 +266,9 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
     position: absolute !important;
     bottom: -25px !important;
 }
-
+header > div.header-top {
+    display: none !important;
+}
 @media screen and (max-width: 480px) {
     .dashboard-title.dashboard-flex {
         display: block !important;
@@ -281,6 +283,9 @@ header .top-nav .navbar-top .middle-box .search-box .input-group button {
     .product-box-3-home .product-header .product-image {
         max-height: 250px !important;
         overflow: hidden !important;
+    }
+    header > div.header-top {
+        display: block !important;
     }
 }
 
@@ -497,4 +502,10 @@ header .location-box button .location-arrow {
 
 .accordion-item {
   border: 1px solid #FEEEE7 !important;
+}
+
+
+header .top-nav .navbar-top .middle-box .location-box button i, 
+header .top-nav .navbar-top .middle-box .location-box button .locat-name {
+    display: block !important;
 }

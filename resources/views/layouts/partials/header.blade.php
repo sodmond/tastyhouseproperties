@@ -1,4 +1,6 @@
 <header class="pb-0 fixed-header" style="z-index: 2;">
+    @include('layouts.partials.topbar')
+
     <div class="top-nav top-header">
         <div class="container-fluid-xs">
             <div class="row">
