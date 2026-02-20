@@ -56,6 +56,9 @@
                             <li>
                                 <a href="{{ route('contact') }}" class="text-content">Contact</a>
                             </li>
+                            <li>
+                                <a href="{{ route('pricing') }}" class="text-content">Pricing</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

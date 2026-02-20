@@ -32,6 +32,7 @@ Route::post('/contact', [App\Http\Controllers\HomeController::class, 'contactFor
 Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
 Route::get('/terms-conditions', [App\Http\Controllers\HomeController::class, 'tandc'])->name('tandc');
 Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacyPolicy'])->name('privacypolicy');
+Route::get('/pricing', [App\Http\Controllers\HomeController::class, 'pricing'])->name('pricing');
 Route::get('/get-state-city/{state_id}', [App\Http\Controllers\HomeController::class, 'getCitiesforState']);
 Route::get('/get-sub-categories/{cat_id}', [App\Http\Controllers\HomeController::class, 'getSubCategories']);
 Route::get('/advertise', [App\Http\Controllers\HomeController::class, 'advertise'])->name('advertise');

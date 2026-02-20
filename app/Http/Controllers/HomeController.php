@@ -99,6 +99,11 @@ class HomeController extends Controller
         return view('privacy_policy');
     }
 
+    public function pricing()
+    {
+        return view('pricing');
+    }
+
     public function getSubCategories($cat_id)
     {
         $category = ProductCategory::find($cat_id);

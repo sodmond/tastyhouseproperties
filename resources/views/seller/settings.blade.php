@@ -46,6 +46,9 @@
 
                             @php $status = 0; @endphp
                             <div class="row mb-4">
+                                <div class="col-md-12 mb-4">
+                                    <a href="{{ route('pricing') }}" target="_blank"><i class="fa fa-info-circle"></i> <u>Reasons why you should subscribe</u></a>
+                                </div>
                                 <div class="col-md-4">
                                     <span class="fs-6 fw-bolder">Status:</span>
                                     @if (! isset($accountSub->end_date))
