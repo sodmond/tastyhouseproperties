@@ -183,12 +183,12 @@ class ShopController extends Controller
                         if ($locationType == 'city') {
                             $products = Product::where('title', 'LIKE', "%$search%")->where('city_id', $locationId)->orderBy('prime_status', 'desc')->orderByDesc('created_at')->paginate(20);
                             $locationData = City::find($locationId);
-                            return view('shop_category', compact('products', 'locationData'));
+                            return view('search', compact('products', 'locationData'));
                         }
                         $cities = City::where('state_id', $locationId)->pluck('id');
                         $locationData = State::find($locationId);
                         $products = Product::where('title', 'LIKE', "%$search%")->whereIn('city_id', $cities)->orderBy('prime_status', 'desc')->orderByDesc('created_at')->paginate(20);
-                        return view('shop_category', compact('products', 'locationData'));
+                        return view('search', compact('products', 'locationData'));
                     }
                 }
             }

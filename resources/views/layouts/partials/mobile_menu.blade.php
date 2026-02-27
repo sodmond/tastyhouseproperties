@@ -1,4 +1,4 @@
-<div class="mobile-menu d-md-none d-block mobile-cart">
+<div class="mobile-menu d-md-none d-block mobile-cart" style="background-color:#222 !important">
     <ul>
         <li class="active">
             <a href="{{ url('/') }}">

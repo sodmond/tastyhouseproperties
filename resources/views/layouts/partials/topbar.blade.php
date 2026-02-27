@@ -1,4 +1,4 @@
-<div class="header-top">
+<div class="header-top" style="background-color:#222 !important">
     <div class="container-fluid-lg">
         <div class="row">
             <div class="col-xxl-3 col-lg-3 col-7 d-xxl-block">

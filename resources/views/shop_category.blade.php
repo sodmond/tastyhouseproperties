@@ -194,6 +194,14 @@
                 <nav class="custom-pagination">
                     {{ $products->appends($_GET)->links() }}
                 </nav>
+
+                @if($products->count() < 1)
+                    <div class="row mb-4">
+                        <div class="col-12 text-center text-content mb-4">
+                            <em class="fs-4">No products available!</em>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
