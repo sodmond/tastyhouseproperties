@@ -141,7 +141,7 @@
 
         <div class="sub-footer section-small-space">
             <div class="reserve">
-                <h6 class="text-content">© 2025 {{ config('app.name') }} All rights reserved</h6>
+                <h6 class="text-content">© {{ date('Y') }} {{ config('app.name') }} All rights reserved</h6>
             </div>
 
             <div class="payment">
