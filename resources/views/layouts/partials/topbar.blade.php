@@ -34,6 +34,13 @@
                 <ul class="about-list right-nav-about">
                     <li class="right-nav-list">
                         <div class="dropdown theme-form-select">
+                            <a class="btn btn-xs text-white" style="border:1px solid #FFF;" href="https://youtu.be/EYP2goZeQpw?si=KpxpLNY664q1Nc89" target="_blank">
+                                How to SELL
+                            </a>
+                        </div>
+                    </li>
+                    <li class="right-nav-list">
+                        <div class="dropdown theme-form-select">
                             <a class="btn text-white" style="border:1px solid #FFF;" href="{{ route('seller.product.new') }}">
                                 <i class="fa fa-plus-circle"></i> SELL
                             </a>
