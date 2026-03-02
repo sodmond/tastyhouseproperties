@@ -70,6 +70,11 @@
                                         </button>
                                     </div>
                                 </li>
+                                <li class="right-side">
+                                    <a class="btn btn-xs" style="border:1px solid #222;" href="https://youtu.be/EYP2goZeQpw?si=KpxpLNY664q1Nc89" target="_blank">
+                                        How to SELL
+                                    </a>
+                                </li>
                                 <li class="right-side wishlist">
                                     <a href="{{ route('user.wishlist') }}" class="btn p-0 position-relative header-wishlist">
                                         <i data-feather="heart"></i>

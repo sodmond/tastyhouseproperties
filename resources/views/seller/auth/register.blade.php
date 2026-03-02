@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="other-log-in">
-                        <h6>*</h6>
+                        <h6>OR</h6>
                     </div>
 
                     <div class="log-in-button">

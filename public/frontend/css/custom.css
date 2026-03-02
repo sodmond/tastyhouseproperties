@@ -515,3 +515,9 @@ header .top-nav .navbar-top .middle-box .location-box button .locat-name {
     font-size: 12px;
     font-weight: 400;
 }
+
+@media (max-width: 1812px) {
+  header .top-nav .navbar-top .middle-box .search-box .input-group .form-control {
+    width: 366px !important;
+  }
+}

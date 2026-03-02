@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeEmail;
 use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
@@ -38,6 +40,7 @@ class GoogleController extends Controller
                     'google_id'=> $user->id,
                 ]);
                 $newSeller->markEmailAsVerified();
+                Mail::to($newSeller->email)->send(new WelcomeEmail($newSeller->firstname));
                 Auth::guard('seller')->login($newSeller);
                 return redirect()->route('seller.home');
             }
@@ -57,6 +60,7 @@ class GoogleController extends Controller
                 ]);
                 $newBuyer->markEmailAsVerified();
                 Auth::guard('web')->login($newBuyer);
+                Mail::to($newBuyer->email)->send(new WelcomeEmail($newBuyer->firstname));
                 return redirect()->route('user.home');
             }
         }
