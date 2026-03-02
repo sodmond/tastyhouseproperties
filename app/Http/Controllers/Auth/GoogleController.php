@@ -55,6 +55,7 @@ class GoogleController extends Controller
                     'google_id'=> $user->id,
                     'email_verified_at' => now()
                 ]);
+                $newBuyer->markEmailAsVerified();
                 Auth::guard('web')->login($newBuyer);
                 return redirect()->route('user.home');
             }

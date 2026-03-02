@@ -100,28 +100,26 @@
                         <h6>*</h6>
                     </div>
 
-                    {{--<div class="log-in-button">
+                    <div class="log-in-button">
                         <ul>
                             <li>
-                                <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
-                                    class="btn google-button w-100">
+                                <a href="{{ route('auth.google') }}" class="btn google-button w-100">
                                     <img src="{{ asset('frontend/images/inner-page/google.png') }}" class="blur-up lazyload"
-                                        alt="">
-                                    Sign up with Google
+                                        alt="">Sign up with Google
                                 </a>
                             </li>
-                            <li>
+                            {{--<li>
                                 <a href="https://www.facebook.com/" class="btn google-button w-100">
                                     <img src="{{ asset('frontend/images/inner-page/facebook.png') }}" class="blur-up lazyload"
                                         alt=""> Sign up with Facebook
                                 </a>
-                            </li>
+                            </li>--}}
                         </ul>
                     </div>
 
                     <div class="other-log-in">
                         <h6></h6>
-                    </div>--}}
+                    </div>
 
                     <div class="sign-up-box">
                         <h4>Already have an account?</h4>

@@ -69,26 +69,26 @@
                         <h6> * </h6>
                     </div>
 
-                    {{--<div class="log-in-button">
+                    <div class="log-in-button">
                         <ul>
                             <li>
-                                <a href="https://www.google.com/" class="btn google-button w-100">
+                                <a href="{{ route('auth.google') }}" class="btn google-button w-100">
                                     <img src="{{ asset('frontend/images/inner-page/google.png') }}" class="blur-up lazyload"
                                         alt=""> Log In with Google
                                 </a>
                             </li>
-                            <li>
+                            {{--<li>
                                 <a href="https://www.facebook.com/" class="btn google-button w-100">
                                     <img src="{{ asset('frontend/images/inner-page/facebook.png') }}" class="blur-up lazyload"
                                         alt=""> Log In with Facebook
                                 </a>
-                            </li>
+                            </li>--}}
                         </ul>
                     </div>
 
                     <div class="other-log-in">
                         <h6></h6>
-                    </div>--}}
+                    </div>
 
                     <div class="sign-up-box">
                         <h4>Don't have an account?</h4>

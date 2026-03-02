@@ -24,6 +24,7 @@ use App\Models\Subscription;
 */
 
 Auth::routes(['verify' => 'true']);
+Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirect'])->name('auth.google');
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleCallback']);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
