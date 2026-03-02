@@ -30,8 +30,8 @@ Route::group([], function(){
     Route::get('password/reset/{token}', [SellerBackend\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('password/reset', [SellerBackend\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 
-    //Route::get('auth/google', [SellerBackend\Auth\GoogleController::class, 'redirect'])->name('auth.google');
-    Route::get('auth/google/callback', [SellerBackend\Auth\GoogleController::class, 'handleCallback']);
+    Route::get('auth/google', [SellerBackend\Auth\GoogleController::class, 'redirect'])->name('auth.google');
+    //Route::get('auth/google/callback', [SellerBackend\Auth\GoogleController::class, 'handleCallback']);
 });
 
 Route::group(['middleware' => ['auth:seller', 'verified']], function () {
