@@ -509,3 +509,9 @@ header .top-nav .navbar-top .middle-box .location-box button i,
 header .top-nav .navbar-top .middle-box .location-box button .locat-name {
     display: block !important;
 }
+
+.btn-xs {
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 400;
+}
