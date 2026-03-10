@@ -64,6 +64,6 @@ class GoogleController extends Controller
                 return redirect()->route('user.home');
             }
         }
-        dd($type, $user);
+        abort(404);
     }
 }

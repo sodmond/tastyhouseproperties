@@ -32,7 +32,7 @@
                                             </div>
 
                                             <div class="contact-detail-contain">
-                                                <p>+2349051802727</p>
+                                                <p>+234 703 808 0597</p>
                                             </div>
                                         </div>
                                     </div>

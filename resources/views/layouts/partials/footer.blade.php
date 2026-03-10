@@ -101,7 +101,7 @@
                                     <i data-feather="phone"></i>
                                     <div class="contact-number">
                                         <h6 class="text-content">Hotline 24/7 :</h6>
-                                        <h5>+2349051802727</h5>
+                                        <h5>+234 703 808 0597</h5>
                                     </div>
                                 </div>
                             </li>
@@ -120,13 +120,13 @@
                                 <h5 class="mb-2 text-content">Download App :</h5>
                                 <ul>
                                     <li class="mb-0">
-                                        <a href="https://play.google.com/store/apps" target="_blank">
+                                        <a href="javascript:void(0);" target="_blank">
                                             <img src="{{ asset('frontend/images/playstore.svg') }}" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="mb-0">
-                                        <a href="https://www.apple.com/in/app-store/" target="_blank">
+                                        <a href="javascript:void(0);" target="_blank">
                                             <img src="{{ asset('frontend/images/appstore.svg') }}" class="blur-up lazyload"
                                                 alt="">
                                         </a>
@@ -152,17 +152,17 @@
                 <h6 class="text-content">Stay connected :</h6>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/share/1HBgUCpF5h/?mibextid=wwXIfr" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/" target="_blank">
+                        <a href="#" target="_blank">
                             <i class="fa-brands fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/" target="_blank">
+                        <a href="https://www.instagram.com/tastyhouse__properties?igsh=MTc2NmQ5cTIzcWVpNA%3D%3D&utm_source=qr" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
