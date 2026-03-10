@@ -120,13 +120,13 @@
                                 <h5 class="mb-2 text-content">Download App :</h5>
                                 <ul>
                                     <li class="mb-0">
-                                        <a href="javascript:void(0);" target="_blank">
+                                        <a href="javascript:void(0);">
                                             <img src="{{ asset('frontend/images/playstore.svg') }}" class="blur-up lazyload"
                                                 alt="">
                                         </a>
                                     </li>
                                     <li class="mb-0">
-                                        <a href="javascript:void(0);" target="_blank">
+                                        <a href="javascript:void(0);">
                                             <img src="{{ asset('frontend/images/appstore.svg') }}" class="blur-up lazyload"
                                                 alt="">
                                         </a>
