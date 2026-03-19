@@ -17,7 +17,16 @@
                     @endif
 
                     <div class="">
-                        {{ __('Before proceeding, please check your email for a verification link.') }}
+                        <div class="mb-4">We've sent you a message with a verification code, check your email inbox or spam folder to verify your account.</div>
+                        <form class="row" method="POST" action="{{ route('seller.verification.verify2') }}">
+                            @csrf
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="code" placeholder="Enter Verification Code" required>
+                                    <button class="btn btn-animation" type="submit">Verify</button>
+                                </div>
+                            </div>
+                        </form>
                         {{ __('If you did not receive the email') }},
                         <form class="d-inline" method="POST" action="{{ route('seller.verification.resend') }}">
                             @csrf

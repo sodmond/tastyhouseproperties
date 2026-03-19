@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Seller\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeEmail;
+use App\Models\SellerCode;
 use App\Notifications\EmailVerify;
+use Carbon\Carbon;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class VerificationController extends Controller
 {
@@ -63,5 +68,30 @@ class VerificationController extends Controller
         $request->fulfill();
         Mail::to(auth('seller')->user()->email)->send(new WelcomeEmail(auth('seller')->user()->firstname));
         return redirect()->route('seller.profile');
+    }
+
+    public function verify2(Request $request)
+    {
+        $this->validate($request, [
+            'code' => ['required', 'numeric']
+        ],[
+            'code.required' => 'Verification code is required',
+            'code.numeric' => 'Verification code must be numeric',
+        ]);
+        $seller_code = SellerCode::where('seller_id', auth('seller')->id())->first();
+        if (Hash::check($request->code, $seller_code->key)) {
+            $expire_at = $seller_code->updated_at->copy()->addMinutes(30);
+            if (Carbon::now()->gt($expire_at)) {
+                return back()->withErrors(['err_msg' => 'Verification code has expired.']);
+            }
+            if (! auth('seller')->user()->hasVerifiedEmail()) {
+                auth('seller')->user()->markEmailAsVerified();
+                event(new Verified(auth('seller')->user()));
+                Mail::to(auth('seller')->user()->email)->send(new WelcomeEmail(auth('seller')->user()->firstname));
+            }
+            $seller_code->update(['key' => Hash::make(Str::random())]);
+            return redirect()->route('seller.profile');
+        }
+        return back()->withErrors(['err_msg' => 'Invalid verification code, pls try again.']);
     }
 }

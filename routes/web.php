@@ -26,6 +26,7 @@ use App\Models\Subscription;
 Auth::routes(['verify' => 'true']);
 Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirect'])->name('auth.google');
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleCallback']);
+Route::post('email/verification', [App\Http\Controllers\Auth\VerificationController::class, 'verify2'])->name('verification.verify2');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'about'])->name('about');

@@ -2,6 +2,8 @@
 
 namespace App\Notifications;
 
+use App\Models\SellerCode;
+use App\Models\UserCode;
 use Illuminate\Support\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -65,9 +67,17 @@ class EmailVerify extends Notification
      */
     protected function buildMailMessage($url)
     {
+        $code = '';
+        if (auth('web')->check()) {
+            $code = UserCode::genCode(auth('web')->id());
+        }
+        if (auth('seller')->check()) {
+            $code = SellerCode::genCode(auth('seller')->id());
+        }
         return (new MailMessage)
             ->subject(Lang::get('Verify Email Address'))
-            ->markdown('mail.email_verify', ['url' => $url]);
+            ->markdown('mail.email_verify', ['code' => $code]);
+            #->markdown('mail.email_verify', ['url' => $url]);
             #->line(Lang::get('Please click the button below to verify your email address.'))
             #->action(Lang::get('Verify Email Address'), $url)
             #->line(Lang::get('If you did not create an account, no further action is required.'));

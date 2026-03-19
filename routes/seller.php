@@ -20,6 +20,7 @@ Route::group([], function(){
     Route::get('email/verify', [SellerBackend\Auth\VerificationController::class, 'show'])->name('verification.notice');
     Route::post('email/verify', [SellerBackend\Auth\VerificationController::class, 'resend'])->name('verification.resend');
     Route::get('email/verify/{id}/{hash}', [SellerBackend\Auth\VerificationController::class, 'verify'])->name('verification.verify');
+    Route::post('email/verification', [SellerBackend\Auth\VerificationController::class, 'verify2'])->name('verification.verify2');
     Route::get('login', [SellerBackend\Auth\LoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', [SellerBackend\Auth\LoginController::class, 'login']);
     Route::post('logout', [SellerBackend\Auth\LoginController::class, 'logout'])->name('logout');
