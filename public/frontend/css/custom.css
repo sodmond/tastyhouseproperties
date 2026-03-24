@@ -521,3 +521,70 @@ header .top-nav .navbar-top .middle-box .location-box button .locat-name {
     width: 366px !important;
   }
 }
+
+/* WhatsApp Floating Start */
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.fab-main-button {
+  background-color: #25D366 ; /* Example color */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fab-speed-dial {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 60px; /* Position above the main button */
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.fab-container.open .fab-speed-dial {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab-action-button {
+  background-color: #FCFCFC;
+  min-width: 220px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: none;
+  color: #222;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  padding: 10px 10px;
+}
+@media screen and (max-width: 480px) {
+  .fab-container {
+    bottom: 70px;
+  }
+}
+/* WhatsApp Floating End */

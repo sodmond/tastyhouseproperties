@@ -175,6 +175,17 @@
         @csrf
     </form>
 
+    <!-- WhatsApp Floating Start -->
+    <div class="fab-container open">
+        <button class="fab-main-button" onclick='window.open("https://wa.me/+2349114912234", "_blank")'>
+            <i class="fa fa-whatsapp"></i> <!-- Example icon -->
+        </button>
+        <ul class="fab-speed-dial">
+            <li><button class="fab-action-button">Have any question? Click here</button></li>
+        </ul>
+    </div>
+    <!-- WhatsApp Floating End -->
+
     <!-- latest jquery-->
     <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
 
