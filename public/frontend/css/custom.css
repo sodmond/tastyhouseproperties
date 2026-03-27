@@ -287,6 +287,9 @@ header > div.header-top {
     header > div.header-top {
         display: block !important;
     }
+    .custom-row .content-col {
+        margin-top: calc(147px + 36*(100vw - 320px)/1600) !important;
+    }
 }
 
 #mobile-location-box {
