@@ -129,7 +129,7 @@
     @endforeach
 </div>
 <div class="row justify-content-center">
-    <a class="btn btn-sm btn-animation justify-content-center col-3 col-md-2" href="">View All</a>
+    <a class="btn btn-sm btn-animation justify-content-center col-3 col-md-2" href="{{ route('shop.prime') }}">View All</a>
 </div>
 <!-- Prime Section Ends Here -->
 
