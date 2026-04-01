@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'My Products', 'activePage' => 'seller.products'])
+@extends('layouts.app', ['title' => 'My Properties', 'activePage' => 'seller.products'])
 
 @section('content')
 <section class="user-dashboard-section section-b-space">
@@ -14,7 +14,7 @@
                 <div class="dashboard-right-sidebar">
                     <div class="product-tab">
                         <div class="title">
-                            <h2>My Products</h2>
+                            <h2>My Properties</h2>
                             <span class="title-leaf">
                                 &nbsp;
                             </span>
@@ -22,7 +22,7 @@
 
                         <div class="table-responsive dashboard-bg-box">
                             <div class="dashboard-title dashboard-flex">
-                                <h3>Product List</h3>
+                                <h3>Property List</h3>
                                 <button class="btn btn-sm theme-bg-color text-white">
                                     <a class="text-white" href="{{ route('seller.product.new') }}">
                                         <i class="fa fa-plus-circle"></i> Add New

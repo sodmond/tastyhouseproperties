@@ -14,7 +14,7 @@
                 <div class="dashboard-right-sidebar">
                     <div class="dashboard-profile">
                         <div class="title">
-                            <h2>New Product</h2>
+                            <h2>New Property</h2>
                             <span class="title-leaf">
                                 &nbsp;
                             </span>
@@ -22,7 +22,7 @@
 
                         <div class="profile-tab dashboard-bg-box">
                             <div class="dashboard-title dashboard-flex">
-                                <h3>Add New Product</h3>
+                                <h3>Add New Property</h3>
                                 <button class="btn btn-sm theme-bg-color"><a class="text-white" href="{{ route('seller.products') }}"><i class="fa fa-arrow-left"></i>  Back</a></button>
                             </div>
 
