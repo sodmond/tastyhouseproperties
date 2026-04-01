@@ -384,7 +384,11 @@
                                         @elseif($r_product->price_type == 'negotiable')
                                             <span class="theme-color">{{ $currency.number_format($r_product->price, 2) }} <small class="text-dark">Negotiable</small></span>
                                         @else
-                                            <span class="theme-color">{{ $currency.number_format($r_product->price, 2) }}</span>
+                                            <span class="theme-color">{{ $currency.number_format($r_product->price, 2) }}
+                                                @if($product->rent_type != '')
+                                                    <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                                @endif
+                                            </span>
                                         @endif
                                     </h5>
                                 </div>
