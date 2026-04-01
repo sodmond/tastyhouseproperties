@@ -103,7 +103,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <form class="modal-content" method="POST" action="{{ route('seller.product.delete') }}">
             <div class="modal-header d-block text-center">
-                <h5 class="modal-title w-100" id="exampleModalLabel22">Confirm Product Delete</h5>
+                <h5 class="modal-title w-100" id="exampleModalLabel22">Confirm Property Delete</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>
