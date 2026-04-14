@@ -273,7 +273,20 @@
 <!-- Short-Let Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Short-Let Properties</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-theme font-sm">Short-Let Properties</h2>
+            </div>
+            <div class="col text-end">
+                <?php
+                    $cat = $productCategories->where('id', 9)->first();
+                    $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                ?>
+                <a class="fs-6" href="{{ route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]) }}">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
@@ -349,7 +362,20 @@
 <!-- Houses & Apartments For Rent Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Houses & Apartments For Rent</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-theme font-sm">Houses & Apartments For Rent</h2>
+            </div>
+            <div class="col text-end">
+                <?php
+                    $cat = $productCategories->where('id', 1)->first();
+                    $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                ?>
+                <a class="fs-6" href="{{ route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]) }}">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
@@ -425,7 +451,20 @@
 <!-- Houses & Apartments For Sale Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Houses & Apartments For Sale</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-theme font-sm">Houses & Apartments For Sale</h2>
+            </div>
+            <div class="col text-end">
+                <?php
+                    $cat = $productCategories->where('id', 2)->first();
+                    $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                ?>
+                <a class="fs-6" href="{{ route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]) }}">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
@@ -501,7 +540,20 @@
 <!-- Workstation Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Workstation</h2>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-theme font-sm">Workstation</h2>
+            </div>
+            <div class="col text-end">
+                <?php
+                    $cat = $productCategories->where('id', 8)->first();
+                    $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                ?>
+                <a class="fs-6" href="{{ route('shop.category', ['id' => $cat->id, 'slug' => $catSlug]) }}">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
@@ -577,8 +629,17 @@
 <!-- Newly Added Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Newly Added Properties</h2>
-        <p>The Latest Drops You’ll Want in Your Cart</p>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-theme font-sm">Newly Added Properties</h2>
+                <p>The Latest Drops You’ll Want in Your Cart</p>
+            </div>
+            <div class="col text-end">
+                <a class="fs-6" href="{{ route('shop') }}">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php $products = $allProducts->take(20); ?>
