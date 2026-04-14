@@ -278,12 +278,9 @@
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
             $categories = $productCategories->where('parent', 9);
-            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
-            $productsCount = count($products);
-            $displayNum = (count($products) < 20) ? $productsCount : 20;
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray())->take(10);
         ?>
-        @for($i=0; $i < $displayNum; $i++)
-            <?php $product = $products[$i]; ?>
+        @foreach($products as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -344,7 +341,7 @@
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 <!-- Short-Let Section End -->
@@ -356,13 +353,10 @@
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
-            $categories = $productCategories->where('parent', 1);
-            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
-            $productsCount = count($products);
-            $displayNum = (count($products) < 20) ? $productsCount : 20;
+            $categories = $productCategories->where('parent', 1)->pluck('id');
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray())->take(10);
         ?>
-        @for($i=0; $i < $displayNum; $i++)
-            <?php $product = $products[$i]; ?>
+        @foreach($products as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -423,7 +417,7 @@
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 <!-- Houses & Apartments For Rent Section End -->
@@ -435,13 +429,10 @@
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
-            $categories = $productCategories->where('parent', 2);
-            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
-            $productsCount = count($products);
-            $displayNum = (count($products) < 20) ? $productsCount : 20;
+            $categories = $productCategories->where('parent', 2)->pluck('id');
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray())->take(10);
         ?>
-        @for($i=0; $i < $displayNum; $i++)
-            <?php $product = $products[$i]; ?>
+        @foreach($products as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -502,7 +493,7 @@
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 <!-- Houses & Apartments For Sale Section End -->
@@ -514,13 +505,10 @@
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
         <?php 
-            $categories = $productCategories->where('parent', 8);
-            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
-            $productsCount = count($products);
-            $displayNum = (count($products) < 20) ? $productsCount : 20;
+            $categories = $productCategories->where('parent', 8)->pluck('id');
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray())->take(10);
         ?>
-        @for($i=0; $i < $displayNum; $i++)
-            <?php $product = $products[$i]; ?>
+        @foreach($products as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -581,7 +569,7 @@
                     </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 <!-- Workstation  Section End -->
@@ -593,7 +581,8 @@
         <p>The Latest Drops You’ll Want in Your Cart</p>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
-        @foreach($recentProducts as $product)
+        <?php $products = $allProducts->take(20); ?>
+        @foreach($products as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
