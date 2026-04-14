@@ -270,14 +270,20 @@
 </section>
 --}}
 
-<!-- Newly Added Section Start -->
+<!-- Short-Let Section Start -->
 <section>
     <div class="title d-block">
-        <h2 class="text-theme font-sm">Newly Added Properties</h2>
-        <p>The Latest Drops You’ll Want in Your Cart</p>
+        <h2 class="text-theme font-sm">Short-Let Properties</h2>
     </div>
-    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
-        @foreach($recentProducts as $product)
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+        <?php 
+            $categories = $productCategories->where('parent', 9);
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
+            $productsCount = count($products);
+            $displayNum = (count($products) < 20) ? $productsCount : 20;
+        ?>
+        @for($i=0; $i < $displayNum; $i++)
+            <?php $product = $products[$i]; ?>
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -338,7 +344,324 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        @endfor
+    </div>
+</section>
+<!-- Short-Let Section End -->
+
+<!-- Houses & Apartments For Rent Section Start -->
+<section>
+    <div class="title d-block">
+        <h2 class="text-theme font-sm">Houses & Apartments For Rent</h2>
+    </div>
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+        <?php 
+            $categories = $productCategories->where('parent', 1);
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
+            $productsCount = count($products);
+            $displayNum = (count($products) < 20) ? $productsCount : 20;
+        ?>
+        @for($i=0; $i < $displayNum; $i++)
+            <?php $product = $products[$i]; ?>
+            <div>
+                <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
+                    @if($product->prime_status == 1)
+                        <span class="product-badge">Prime</span>
+                    @endif
+                    <div class="product-header">
+                        <div class="product-image">
+                            @php $thumbnail = json_decode($product->image)[0]; @endphp
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <img src="{{ asset('storage/products/'.$product->seller_id.'/thumbnail/'.$thumbnail) }}"
+                                    class="img-fluid blur-up lazyload" alt="" style="height:auto;">
+                            </a>
+
+                            <ul class="product-option justify-content-center">
+                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                    <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                        <i data-feather="eye"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-detail text-center">
+                            <span class="span-name">{{ ucwords(strtolower($product->category->title)) }}</span>
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <h5 class="name">{{ $product->title }}</h5>
+                            </a>
+                            <div class="product-rating review-rating justify-content-center">
+                                <ul class="rating">
+                                    <?php $avg_rating = avgRating($product->seller->reviews); ?>
+                                    @for($i=1; $i <= 5; $i++)
+                                        <li>
+                                            <i data-feather="star" class="{{ ($i <= round($avg_rating)) ? 'fill' : '' }}"></i>
+                                        </li>
+                                    @endfor
+                                </ul>
+                                <span class="content-color">({{ $avg_rating }})</span>
+                            </div>
+                            <p class="text-content mt-1 mb-2 product-content">{{ $product->description }}</p>
+                            <h5 class="price">
+                                @if(!in_array($product->price_type, ['fixed', 'negotiable']))
+                                    <span class="theme-color">{{ ucwords(str_replace('_', ' ', $product->price_type)) }}</span>
+                                @elseif($product->price_type == 'negotiable')
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }} <br><small class="text-dark">Negotiable</small></span>
+                                @else
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }}
+                                        @if($product->rent_type != '')
+                                            <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                        @endif
+                                    </span>
+                                @endif
+                            </h5>
+                            <h6 class="unit">
+                                <i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+</section>
+<!-- Houses & Apartments For Rent Section End -->
+
+<!-- Houses & Apartments For Sale Section Start -->
+<section>
+    <div class="title d-block">
+        <h2 class="text-theme font-sm">Houses & Apartments For Sale</h2>
+    </div>
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+        <?php 
+            $categories = $productCategories->where('parent', 2);
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
+            $productsCount = count($products);
+            $displayNum = (count($products) < 20) ? $productsCount : 20;
+        ?>
+        @for($i=0; $i < $displayNum; $i++)
+            <?php $product = $products[$i]; ?>
+            <div>
+                <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
+                    @if($product->prime_status == 1)
+                        <span class="product-badge">Prime</span>
+                    @endif
+                    <div class="product-header">
+                        <div class="product-image">
+                            @php $thumbnail = json_decode($product->image)[0]; @endphp
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <img src="{{ asset('storage/products/'.$product->seller_id.'/thumbnail/'.$thumbnail) }}"
+                                    class="img-fluid blur-up lazyload" alt="" style="height:auto;">
+                            </a>
+
+                            <ul class="product-option justify-content-center">
+                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                    <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                        <i data-feather="eye"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-detail text-center">
+                            <span class="span-name">{{ ucwords(strtolower($product->category->title)) }}</span>
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <h5 class="name">{{ $product->title }}</h5>
+                            </a>
+                            <div class="product-rating review-rating justify-content-center">
+                                <ul class="rating">
+                                    <?php $avg_rating = avgRating($product->seller->reviews); ?>
+                                    @for($i=1; $i <= 5; $i++)
+                                        <li>
+                                            <i data-feather="star" class="{{ ($i <= round($avg_rating)) ? 'fill' : '' }}"></i>
+                                        </li>
+                                    @endfor
+                                </ul>
+                                <span class="content-color">({{ $avg_rating }})</span>
+                            </div>
+                            <p class="text-content mt-1 mb-2 product-content">{{ $product->description }}</p>
+                            <h5 class="price">
+                                @if(!in_array($product->price_type, ['fixed', 'negotiable']))
+                                    <span class="theme-color">{{ ucwords(str_replace('_', ' ', $product->price_type)) }}</span>
+                                @elseif($product->price_type == 'negotiable')
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }} <br><small class="text-dark">Negotiable</small></span>
+                                @else
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }}
+                                        @if($product->rent_type != '')
+                                            <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                        @endif
+                                    </span>
+                                @endif
+                            </h5>
+                            <h6 class="unit">
+                                <i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+</section>
+<!-- Houses & Apartments For Sale Section End -->
+
+<!-- Workstation Section Start -->
+<section>
+    <div class="title d-block">
+        <h2 class="text-theme font-sm">Workstation</h2>
+    </div>
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+        <?php 
+            $categories = $productCategories->where('parent', 8);
+            $products = $allProducts->whereIn('product_category_id', $categories->toArray());
+            $productsCount = count($products);
+            $displayNum = (count($products) < 20) ? $productsCount : 20;
+        ?>
+        @for($i=0; $i < $displayNum; $i++)
+            <?php $product = $products[$i]; ?>
+            <div>
+                <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
+                    @if($product->prime_status == 1)
+                        <span class="product-badge">Prime</span>
+                    @endif
+                    <div class="product-header">
+                        <div class="product-image">
+                            @php $thumbnail = json_decode($product->image)[0]; @endphp
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <img src="{{ asset('storage/products/'.$product->seller_id.'/thumbnail/'.$thumbnail) }}"
+                                    class="img-fluid blur-up lazyload" alt="" style="height:auto;">
+                            </a>
+
+                            <ul class="product-option justify-content-center">
+                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                    <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                        <i data-feather="eye"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-detail text-center">
+                            <span class="span-name">{{ ucwords(strtolower($product->category->title)) }}</span>
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <h5 class="name">{{ $product->title }}</h5>
+                            </a>
+                            <div class="product-rating review-rating justify-content-center">
+                                <ul class="rating">
+                                    <?php $avg_rating = avgRating($product->seller->reviews); ?>
+                                    @for($i=1; $i <= 5; $i++)
+                                        <li>
+                                            <i data-feather="star" class="{{ ($i <= round($avg_rating)) ? 'fill' : '' }}"></i>
+                                        </li>
+                                    @endfor
+                                </ul>
+                                <span class="content-color">({{ $avg_rating }})</span>
+                            </div>
+                            <p class="text-content mt-1 mb-2 product-content">{{ $product->description }}</p>
+                            <h5 class="price">
+                                @if(!in_array($product->price_type, ['fixed', 'negotiable']))
+                                    <span class="theme-color">{{ ucwords(str_replace('_', ' ', $product->price_type)) }}</span>
+                                @elseif($product->price_type == 'negotiable')
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }} <br><small class="text-dark">Negotiable</small></span>
+                                @else
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }}
+                                        @if($product->rent_type != '')
+                                            <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                        @endif
+                                    </span>
+                                @endif
+                            </h5>
+                            <h6 class="unit">
+                                <i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+</section>
+<!-- Workstation  Section End -->
+
+<!-- Newly Added Section Start -->
+<section>
+    <div class="title d-block">
+        <h2 class="text-theme font-sm">Newly Added Properties</h2>
+        <p>The Latest Drops You’ll Want in Your Cart</p>
+    </div>
+    <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
+        <?php 
+            $products = $allProducts->sortByDesc('created_at')->values()->all();
+            $productsCount = count($products);
+            $displayNum = (count($products) < 20) ? $productsCount : 20;
+        ?>
+        @for($i = 0; $i < $displayNum; $i++)
+            <?php $product = $products[$i]; ?>
+            <div>
+                <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
+                    @if($product->prime_status == 1)
+                        <span class="product-badge">Prime</span>
+                    @endif
+                    <div class="product-header">
+                        <div class="product-image">
+                            @php $thumbnail = json_decode($product->image)[0]; @endphp
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <img src="{{ asset('storage/products/'.$product->seller_id.'/thumbnail/'.$thumbnail) }}"
+                                    class="img-fluid blur-up lazyload" alt="" style="height:auto;">
+                            </a>
+
+                            <ul class="product-option justify-content-center">
+                                <li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+                                    <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                        <i data-feather="eye"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-detail text-center">
+                            <span class="span-name">{{ ucwords(strtolower($product->category->title)) }}</span>
+                            <a href="{{ route('product', ['slug' => $product->slug]) }}">
+                                <h5 class="name">{{ $product->title }}</h5>
+                            </a>
+                            <div class="product-rating review-rating justify-content-center">
+                                <ul class="rating">
+                                    <?php $avg_rating = avgRating($product->seller->reviews); ?>
+                                    @for($i=1; $i <= 5; $i++)
+                                        <li>
+                                            <i data-feather="star" class="{{ ($i <= round($avg_rating)) ? 'fill' : '' }}"></i>
+                                        </li>
+                                    @endfor
+                                </ul>
+                                <span class="content-color">({{ $avg_rating }})</span>
+                            </div>
+                            <p class="text-content mt-1 mb-2 product-content">{{ $product->description }}</p>
+                            <h5 class="price">
+                                @if(!in_array($product->price_type, ['fixed', 'negotiable']))
+                                    <span class="theme-color">{{ ucwords(str_replace('_', ' ', $product->price_type)) }}</span>
+                                @elseif($product->price_type == 'negotiable')
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }} <br><small class="text-dark">Negotiable</small></span>
+                                @else
+                                    <span class="theme-color">{{ $currency.number_format($product->price, 2) }}
+                                        @if($product->rent_type != '')
+                                            <small class="text-dark">{{ 'per '.ucwords($product->rent_type) }}</small>
+                                        @endif
+                                    </span>
+                                @endif
+                            </h5>
+                            <h6 class="unit">
+                                <i class="fa fa-map-marker-alt"></i> &nbsp; {{ $product->city->name .', '.$product->city->state->name }}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php echo '<br>'.$i; ?>
+        @endfor
     </div>
 </section>
 <!-- Newly Added Section End -->

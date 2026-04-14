@@ -39,8 +39,10 @@ class HomeController extends Controller
         $adverts = Advert::all();
         $primeProducts = Product::where('prime_status', 1)->inRandomOrder()->take(10)->get();
         $recentProducts = Product::orderByDesc('created_at')->take(20)->get();
+        $allProducts = Product::all();
         $plugview = DB::table('api_data')->where('name', 'plugview')->get()->keyBy('token_type');
-        return view('home', compact('adverts', 'primeProducts', 'recentProducts', 'plugview'));
+        $productCategories = ProductCategory::all();
+        return view('home', compact('adverts', 'primeProducts', 'recentProducts', 'allProducts', 'plugview', 'productCategories'));
     }
 
     public function getCitiesforState($state_id)
