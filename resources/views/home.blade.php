@@ -593,13 +593,7 @@
         <p>The Latest Drops You’ll Want in Your Cart</p>
     </div>
     <div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
-        <?php 
-            $products = $allProducts->sortByDesc('created_at')->values()->all();
-            $productsCount = count($products);
-            $displayNum = (count($products) < 20) ? $productsCount : 20;
-        ?>
-        @for($i = 0; $i < $displayNum; $i++)
-            <?php $product = $products[$i]; ?>
+        @foreach($recentProducts as $product)
             <div>
                 <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
                     @if($product->prime_status == 1)
@@ -660,8 +654,7 @@
                     </div>
                 </div>
             </div>
-            <?php echo '<br>'.$i; ?>
-        @endfor
+        @endforeach
     </div>
 </section>
 <!-- Newly Added Section End -->
