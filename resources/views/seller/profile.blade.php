@@ -91,7 +91,12 @@
 
                                 <li>
                                     <h5 class="fw-bold">Phone :</h5>
-                                    <h5>0{{ auth('seller')->user()->phone }}</h5>
+                                    <h5>{{ str_pad(auth('seller')->user()->phone, 11, 0, STR_PAD_LEFT) }}</h5>
+                                </li>
+
+                                <li>
+                                    <h5 class="fw-bold">WhatsApp :</h5>
+                                    <h5>{{ empty(auth('seller')->user()->whatsapp) ? '' : '+234'.auth('seller')->user()->whatsapp }}</h5>
                                 </li>
 
                                 <li>

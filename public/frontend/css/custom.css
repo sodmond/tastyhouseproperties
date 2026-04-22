@@ -94,6 +94,20 @@ header .onhover-dropdown .onhover-div-login {
     background:-webkit-gradient(linear, left top, right top, from(#222), to(#000));
 }
 
+.btn-whatsapp {
+    background: linear-gradient(90deg, #25D366 0%, #25D366 100%) !important;
+}
+
+.btn-whatsapp:hover {
+    color:#FFF;
+    background: linear-gradient(90deg, #075E54 0%, #128C7E 100%) !important;
+}
+
+.btn-whatsapp:hover::after {
+    background:#075E54;
+    background:-webkit-gradient(linear, left top, right top, from(#075E54), to(#128C7E));
+}
+
 .btn-white {
     border: 1px solid #FFF !important;
     background-color: #FFF !important;

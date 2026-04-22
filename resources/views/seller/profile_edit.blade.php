@@ -169,6 +169,12 @@
                                     </div>
                                     <div class="col-md-12 mb-4">
                                         <div class="form-floating theme-form-floating">
+                                            <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="WhatsApp" value="{{ auth('seller')->user()->whatsapp }}">
+                                            <label for="whatsapp">WhatsApp</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-floating theme-form-floating">
                                             <textarea class="form-control" name="bio" id="bio" style="min-height:150px;">{{ auth('seller')->user()->bio }}</textarea>
                                             <label for="bio">Bio</label>
                                         </div>
