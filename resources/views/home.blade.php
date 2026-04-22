@@ -64,7 +64,7 @@
     <p>Shop our exclusive 'Prime Properties' - featured items handpicked for you by our trusted vendors!</p>
 </div>
 
-<div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-1 g-sm-4 g-3 section-b-space">
+<div class="row row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 g-sm-4 g-3 section-b-space">
     @foreach($primeProducts as $product)
         <div>
             <div class="product-box-3 h-100 wow fadeInUp product-box-3-home">
