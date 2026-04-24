@@ -294,7 +294,7 @@
                                             <div class="row justify-content-center">
                                                 <button class="btn btn-animation col-12" type="submit"><i class="fa fa-comments"></i> &nbsp; Start Chat</button>
                                                 @if($product->seller->whatsapp != '')
-                                                <?php $whatsappLink = 'https://api.whatsapp.com/send?phone=' . urlencode('+234'.$product->seller->whatsapp) . '&text=' . urlencode($product->title) .'%0A'. urlencode(url()->full()); ?>
+                                                <?php $whatsappLink = 'https://api.whatsapp.com/send?phone=' . urlencode('+234'.$product->seller->whatsapp) . '&text=' . urlencode('Hello,') . '%0A' . urlencode('I want to enquire about your property on Tastyhouse Properties.') . '%0A' . urlencode($product->title) .'%0A'. urlencode(url()->full()); ?>
                                                 <a class="btn btn-whatsapp col-12 mt-2" href="{{ $whatsappLink }}" target="_blank">
                                                     <i class="fa fa-whatsapp"></i> &nbsp; Chat on WhatsApp
                                                 </a>
