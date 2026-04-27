@@ -16,6 +16,29 @@
                         <h3>Create New Account</h3>
                     </div>
 
+                    <div class="log-in-button">
+                        <ul>
+                            <li>
+                                <a href="{{ route('seller.auth.google') }}"
+                                    class="btn google-button w-100">
+                                    <img src="{{ asset('frontend/images/inner-page/google.png') }}" class="blur-up lazyload"
+                                        alt="">
+                                    Sign up with Google
+                                </a>
+                            </li>
+                            {{--<li>
+                                <a href="https://www.facebook.com/" class="btn google-button w-100">
+                                    <img src="{{ asset('frontend/images/inner-page/facebook.png') }}" class="blur-up lazyload"
+                                        alt=""> Sign up with Facebook
+                                </a>
+                            </li>--}}
+                        </ul>
+                    </div>
+
+                    <div class="other-log-in mb-4">
+                        <h6>OR</h6>
+                    </div>
+
                     <div class="input-box">
                         @if (count($errors))
                             <div class="alert alert-danger">
@@ -93,29 +116,6 @@
                                 <button class="btn btn-animation w-100" type="submit">Sign Up</button>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="other-log-in">
-                        <h6>OR</h6>
-                    </div>
-
-                    <div class="log-in-button">
-                        <ul>
-                            <li>
-                                <a href="{{ route('seller.auth.google') }}"
-                                    class="btn google-button w-100">
-                                    <img src="{{ asset('frontend/images/inner-page/google.png') }}" class="blur-up lazyload"
-                                        alt="">
-                                    Sign up with Google
-                                </a>
-                            </li>
-                            {{--<li>
-                                <a href="https://www.facebook.com/" class="btn google-button w-100">
-                                    <img src="{{ asset('frontend/images/inner-page/facebook.png') }}" class="blur-up lazyload"
-                                        alt=""> Sign up with Facebook
-                                </a>
-                            </li>--}}
-                        </ul>
                     </div>
 
                     <div class="other-log-in">
