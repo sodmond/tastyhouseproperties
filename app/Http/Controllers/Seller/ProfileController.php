@@ -44,7 +44,13 @@ class ProfileController extends Controller
 
     public function update(ProfileRequest $request)
     {
-        auth('seller')->user()->update($request->all());
+        $slugText = empty($request->companyname) ? [$request->firstname, $request->lastname] : [$request->companyname];
+        $slug = Seller::getSlug($slugText);
+        $profileData = $request->all();
+        if(auth('seller')->user()->companyname != $request->companyname) {
+            $profileData = array_merge($profileData, ['slug' => $slug]);
+        }
+        auth('seller')->user()->update($profileData);
         $successMsg = 'Profile successfully updated.';
         if(auth('seller')->user()->image == '') {
             $successMsg .= ' The business logo is mandatory to proceed to the next section.';

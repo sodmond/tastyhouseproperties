@@ -128,6 +128,68 @@
 
             <div class="col-xxl-9 col-lg-8">
                 <div class="right-box">
+                    <div class="show-button mb-4">
+                        <div class="top-filter-menu-2" style="display:block;">
+                            <?php
+                                $sellerUrl = empty($seller->slug) ? route('seller.details', ['id' => $seller->id]) : route('seller.shop', ['slug' => $seller->slug])
+                            ?>
+                            <!-- Categories Section Start -->
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Filter Category
+                                    </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            @foreach($th_categories1 as $cat)
+                                                <div class="col-4 col-md-3 col-xxl-2 mb-3">
+                                                    <div class="slider-7_ no-space shop-box no-arrow slick-dotted">
+                                                        <div>
+                                                            @php 
+                                                                $catSlug = \App\Models\ProductCategory::getSlug($cat->title);
+                                                                $catUrl = request()->fullUrlWithQuery(['category' => $cat->id]);
+                                                            @endphp
+                                                            <div class="shop-category-box">
+                                                                <a href="{{ $catUrl }}">
+                                                                    <div class="shop-category-image">
+                                                                        <img src="{{ asset($cat->icon) }}" class="blur-up lazyload" alt="">
+                                                                    </div>
+                                                                    <div class="category-box-name">
+                                                                        <h6>{{ ucwords(strtolower($cat->title)) }}</h6>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            <div class="col-4 col-md-3 col-xxl-2 mb-3">
+                                                <div class="slider-7_ no-space shop-box no-arrow slick-dotted">
+                                                    <div>
+                                                        <div class="shop-category-box">
+                                                            <a href="{{ $sellerUrl }}">
+                                                                <div class="shop-category-image">
+                                                                    <img src="{{ asset('img/svg/reset.svg') }}" class="blur-up lazyload" alt="">
+                                                                </div>
+                                                                <div class="category-box-name">
+                                                                    <h6>Reset</h6>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Categories Section End -->
+                        </div>
+                    </div>
                     <div class="row g-sm-4 g-3 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section">
                         @foreach($products as $product)
                         <div>

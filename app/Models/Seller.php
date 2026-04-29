@@ -24,7 +24,7 @@ class Seller extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'firstname', 'lastname', 'email', 'phone', 'dob', 'gender',
-        'password', 'companyname', 'bio', 'image', 'whatsapp',
+        'password', 'companyname', 'slug', 'bio', 'image', 'whatsapp',
         'address', 'city', 'state', 'zip', 'google_id',
         'nin', 'nin_photo', 'status', 'kyc_status', 'type'
     ];
@@ -68,6 +68,20 @@ class Seller extends Authenticatable implements MustVerifyEmail
     public function reviews(): HasMany
     {
         return $this->hasMany(SellerReview::class);
+    }
+
+    public static function getSlug($name = [])
+    {
+        $slug = '';
+        if(!empty($name)) {
+            $names = implode('-', $name);
+            $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $names)));
+            $check_slug = Seller::where('slug', $slug)->count();
+            if($check_slug > 0) {
+                $slug .= '-'.time();
+            }
+        }
+        return $slug;
     }
 
     public function seller_code() : HasOne 

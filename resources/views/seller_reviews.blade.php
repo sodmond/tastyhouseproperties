@@ -9,11 +9,14 @@
                     <div class="shop-left-sidebar">
                         <div class="vendor-detail-box">
                             <div class="vendor-name vendor-bottom">
+                                <?php
+                                    $sellerUrl = empty($seller->slug) ? route('seller.details', ['id' => $seller->id]) : route('seller.shop', ['slug' => $seller->slug])
+                                ?>
                                 <div class="vendor-logo">
                                     <img src="{{ asset('storage/seller/profile_pix/'.$seller->image) }}" alt="" style="cursor:pointer"
-                                        onclick="window.location.href='{{ route('seller.details', ['id' => $seller->id]) }}'">
+                                        onclick="window.location.href='{{ $sellerUrl }}'">
                                     <div>
-                                        <h3 class="mb-2" onclick="window.location.href='{{ route('seller.details', ['id' => $seller->id]) }}'" style="cursor:pointer">
+                                        <h3 class="mb-2" onclick="window.location.href='{{ $sellerUrl }}'" style="cursor:pointer">
                                             {{ $seller->companyname ?? $seller->firstname.' '.$seller->lastname }}</h3>
                                         @if ($seller->kyc_status == 1)
                                             <span class="text-success border-success px-2 py-1 rounded small">

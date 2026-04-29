@@ -226,13 +226,16 @@
                     <!-- Vendor -->
                     <div class="vendor-box">
                         <div class="vendor-contain">
+                            <?php
+                                $sellerUrl = empty($product->seller->slug) ? route('seller.details', ['id' => $product->seller->id]) : route('seller.shop', ['slug' => $product->seller->slug])
+                            ?>
                             <div class="vendor-image">
                                 <img src="{{ asset('storage/seller/profile_pix/'.$product->seller->image) }}" alt="" class="blur-up lazyload" 
-                                    onclick="window.location.href='{{ route('seller.details', ['id' => $product->seller_id]) }}'" style="cursor: pointer">
+                                    onclick="window.location.href='{{ $sellerUrl }}'" style="cursor: pointer">
                             </div>
 
                             <div class="vendor-name">
-                                <h5 class="fw-500 mb-2" onclick="window.location.href='{{ route('seller.details', ['id' => $product->seller_id]) }}'" style="cursor: pointer">
+                                <h5 class="fw-500 mb-2" onclick="window.location.href='{{ $sellerUrl }}'" style="cursor: pointer">
                                     {{ $product->seller->companyname ?? $product->seller->firstname.$product->seller->lastname }}</h5>
 
                                 @if ($product->seller->kyc_status == 1)

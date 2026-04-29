@@ -57,6 +57,7 @@ Route::get('/blog-details/{id}/{slug}', [App\Http\Controllers\BlogController::cl
 Route::get('/all-vendors', [App\Http\Controllers\VendorController::class, 'index'])->name('sellers');
 Route::get('/become-a-vendor', [App\Http\Controllers\VendorController::class, 'about'])->name('seller.about');
 Route::get('/vendor-details', [App\Http\Controllers\VendorController::class, 'view'])->name('seller.details');
+Route::get('/vendor-details/{slug}', [App\Http\Controllers\VendorController::class, 'shop'])->name('seller.shop');
 Route::get('/vendor-reviews', [App\Http\Controllers\VendorController::class, 'reviews'])->name('vendor.reviews');
 
 Route::group(['middleware' => ['auth:web'/*, 'verified'*/], 'prefix' => 'user', 'as' => 'user.'], function () {

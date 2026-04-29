@@ -37,6 +37,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+            'slug' => Seller::getSlug([$data['firstname'], $data['lastname']]),
         ]);
         #AuthorParent::create(['seller_id' => $seller->id]);
         Auth::guard('seller')->login($seller);
