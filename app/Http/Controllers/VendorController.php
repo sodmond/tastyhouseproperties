@@ -26,6 +26,14 @@ class VendorController extends Controller
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $seller = Seller::find($id);
+            if(isset($seller->id)) {
+                if (empty($seller->slug)) {
+                    $slugText = empty($seller->companyname) ? [$seller->firstname, $seller->lastname] : [$seller->companyname];
+                    $slug = Seller::getSlug($slugText);
+                    $seller->update(['slug' => $slug]);
+                    return redirect()->route('seller.shop', ['slug' => $slug]);
+                }
+            }
             $products = Product::where('seller_id', $seller->id)->orderBy('prime_status', 'desc')->orderByDesc('created_at')->paginate(10);
             $primeProducts = Subscription::where('end_date', '>', now())->where('type', 'prime')->pluck('product_id')->toArray();
             return view('seller_details', compact('seller', 'products', 'primeProducts'));
