@@ -56,6 +56,7 @@ class ProductController extends Controller
         $product->legal_fee = $request->legal_fee ?? 0;
         $product->caution_fee = $request->caution_fee ?? 0;
         $product->service_charge = $request->service_charge ?? 0;
+        $product->whatsapp = $request->whatsapp;
         $images = [];
         foreach ($request->file('image') as $image) {
             $imgName = Str::random().'.'.$image->extension();
@@ -120,7 +121,6 @@ class ProductController extends Controller
         $product->price = $request->price ?? 0;
         $product->price_type = $request->price_type;
         $product->condition = $request->condition;
-        $product->slug = genrateSlug([$request->title, $request->condition]);
         $product->description = $request->description;
         $product->city_id = $request->city;
         $product->property_size = $request->property_size;
@@ -128,6 +128,7 @@ class ProductController extends Controller
         $product->legal_fee = $request->legal_fee ?? 0;
         $product->caution_fee = $request->caution_fee ?? 0;
         $product->service_charge = $request->service_charge ?? 0;
+        $product->whatsapp = $request->whatsapp;
         if(!empty($request->image)) {
             $productImages = json_decode($product->image);
             foreach($request->file('image') as $key => $image) {

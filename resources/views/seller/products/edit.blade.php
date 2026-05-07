@@ -182,6 +182,12 @@
                                             <label for="city">City</label>
                                         </div>
                                     </div>
+                                    <div class="col-md-12 mb-4">
+                                        <div class="form-floating theme-form-floating">
+                                            <input type="number" class="form-control" id="whatsapp" name="whatsapp" placeholder="Custom WhatsApp Number" value="{{ $product->whatsapp }}">
+                                            <label for="whatsapp">Custom WhatsApp Number</label>
+                                        </div>
+                                    </div>
                                     <div class="col mb-4 pt-3" style="border-top:1px solid #dcdcdc;">
                                         <span class="fs-5" style="float:left;">Product Image</span>
                                     </div>

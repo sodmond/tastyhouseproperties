@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth:admin', 'change.admindomain']], function ()
     Route::get('vendor/{id}/subscriptions', [AdminBackend\SellerController::class, 'subscriptions'])->name('vendor.subscriptions');
     Route::get('vendor/{id}/ban', [AdminBackend\SellerController::class, 'ban'])->name('vendor.ban');
     Route::post('vendor/{id}/renew', [AdminBackend\SellerController::class, 'renew'])->name('vendor.renew');
+    Route::get('vendor/{id}/login', [AdminBackend\SellerController::class, 'login'])->name('vendor.login');
 
     Route::get('categories', [AdminBackend\CategoryController::class, 'index'])->name('categories');
     Route::get('categories/export', [AdminBackend\CategoryController::class, 'export'])->name('categories.export');

@@ -14,7 +14,8 @@ class Product extends Model
 
     protected $fillable = [
         'seller_id', 'title', 'price', 'price_type', 'condition', 
-        'slug', 'description', 'image', 'city_id', 'views', 'prime_status'
+        'slug', 'description', 'image', 'city_id', 'views', 'prime_status',
+        'whatsapp'
     ];
 
     public function seller(): BelongsTo
