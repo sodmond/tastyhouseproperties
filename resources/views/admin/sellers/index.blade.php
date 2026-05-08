@@ -87,13 +87,11 @@
                                                     </a>
                                                 </li>
 
-                                                @if (auth('admin')->user()->role == 1)
                                                 <li>
                                                     <a href="{{ route('admin.vendor.login', ['id' => $seller->id]) }}" target="_blank" title="Auto-Login">
                                                         <i class="ri-login-box-line text-primary"></i>
                                                     </a>
                                                 </li>
-                                                @endif
 
                                                 {{--<li>
                                                     <a href="javascript:void(0)" data-bs-toggle="modal"

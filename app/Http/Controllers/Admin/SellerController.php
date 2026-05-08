@@ -117,9 +117,9 @@ class SellerController extends Controller
 
     public function login($id)
     {
-        if (auth('admin')->user()->role != 1) {
+        /*if (auth('admin')->user()->role != 1) {
             return redirect()->back()->withErrors(['err_msg' => 'Unauthorized Access!']);
-        }
+        }*/
         $seller = Seller::find($id);
         if ($seller) {
             auth('seller')->login($seller);
