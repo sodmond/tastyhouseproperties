@@ -23,8 +23,13 @@
                         </div>
 
                         <div>
-                            <h4 class="mb-2">Basic Plan 2000 Naira Monthly</h4>
-                            <p>Benefits</p>
+                            <h3 class="mb-2">Basic Plan 2000 Naira Monthly</h3>
+                            <p><span style="color:var(--theme-color)">{{ $currency }}4000</span> for 1 month<br>
+                                <span style="color:var(--theme-color)">{{ $currency }}6000</span> for 3 months<br>
+                                <span style="color:var(--theme-color)">{{ $currency }}12000</span> for 6 months<br>
+                                <span style="color:var(--theme-color)">{{ $currency }}24000</span> for 12 months
+                            </p>
+                            <h5>Benefits</h5>
                             <ul class="list-group">
                                 <li>Account Activation</li>
                                 <li>Unlimited Menu, Products and Service Listings</li>
