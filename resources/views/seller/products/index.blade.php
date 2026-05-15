@@ -16,7 +16,8 @@
                         <div class="title">
                             <h2>My Properties</h2>
                             <span class="title-leaf">
-                                &nbsp;
+                                <?php $sellerUrl = empty(auth('seller')->user()->slug) ? route('thc.seller.details', ['id' => auth('seller')->id()]) : route('thc.seller.shop', ['slug' => auth('seller')->user()->slug])?>
+                                <a class="btn btn-sm theme-bg-color text-white" href="{{ $sellerUrl }}" target="_blank">Open Shop &nbsp;<i class="fa fa-external-link-alt"></i></a>
                             </span>
                         </div>
 
