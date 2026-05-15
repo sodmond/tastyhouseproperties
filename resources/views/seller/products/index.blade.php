@@ -17,7 +17,7 @@
                             <h2>My Properties</h2>
                             <span class="title-leaf">
                                 <?php $sellerUrl = empty(auth('seller')->user()->slug) ? route('seller.details', ['id' => auth('seller')->id()]) : route('seller.shop', ['slug' => auth('seller')->user()->slug])?>
-                                <a class="btn btn-sm theme-bg-color text-white" href="{{ $sellerUrl }}" target="_blank">Open Shop &nbsp;<i class="fa fa-external-link-alt"></i></a>
+                                <a class="btn btn-sm theme-bg-color text-white" href="{{ $sellerUrl }}" target="_blank">My Shop &nbsp;<i class="fa fa-external-link-alt"></i></a>
                             </span>
                         </div>
 

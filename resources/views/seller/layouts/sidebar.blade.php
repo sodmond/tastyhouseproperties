@@ -56,6 +56,12 @@
                 <i data-feather="settings"></i>Subscription</a>
         </li>
 
+        <li class="nav-item" role="presentation">
+            <?php $sellerUrl = empty(auth('seller')->user()->slug) ? route('seller.details', ['id' => auth('seller')->id()]) : route('seller.shop', ['slug' => auth('seller')->user()->slug])?>
+            <a class="nav-link {{ $activePage == 'seller.settings' ? 'active' : '' }}" href="{{ $sellerUrl }}" target="_blank">
+                <i data-feather="shopping-cart"></i> My Shop</a>
+        </li>
+
         <li class="nav-item" onclick="event.preventDefault(); document.getElementById('seller-logout-form').submit();">
             <a class="nav-link" href="{{ route('seller.logout') }}">
                 <i data-feather="log-out"></i> Log Out</a>
