@@ -6,6 +6,13 @@
         
 
         <div class="col-12 order-1 order-md-1 order-lg-2 order-xl-2">
+            <div class="location-box-2 mb-3">
+                <button class="btn btn-animation location-button">
+                    <span class="location-arrow"><i class="fas fa-map-marker-alt"></i>&nbsp;</span>
+                    <span class="locat-name"> {{ 'Change Location' }}</span>&nbsp;
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
             <h5 class="text-content mb-4">@isset($locationData) Products in {{ $locationData->name }} @endisset</h5>
             <div class="show-button">
                 <div class="top-filter-menu-2">
