@@ -544,7 +544,7 @@ header .top-nav .navbar-top .middle-box .location-box button .locat-name {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 9; /* Ensure it stays on top */
 }
 
 .fab-main-button {
